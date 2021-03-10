@@ -29,6 +29,10 @@
 *.x86_64
 *.hex
 
-#Apple
+# Apple
 .DS_Store
 .vscode
+
+# PUSH_SWAP PROJECT
+checker
+push_swap
