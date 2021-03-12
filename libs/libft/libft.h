@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 12:39:57 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/11 07:53:04 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/12 15:13:20 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <limits.h>
+
+# define TRUE 1
+# define FALSE 0
 
 size_t				ft_strlen(const char *s);
 int					ft_isalpha(int c);
