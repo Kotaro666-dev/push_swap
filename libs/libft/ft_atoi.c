@@ -6,27 +6,36 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 16:42:20 by kkamashi          #+#    #+#             */
-/*   Updated: 2020/10/26 15:23:41 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/12 15:24:12 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <limits.h>
 #include <stdio.h>
 
-static int		is_space(char c)
+static int		ft_isspace(char c)
 {
 	return (c == ' ' || c == '\t' || c == '\n' ||
 			c == '\v' || c == '\f' || c == '\r');
 }
 
-static int		is_result_overflow(long long int num)
+static int		is_result_overflow(long long int num, int is_minus)
 {
-	if (num > INT_MAX)
+	if (is_minus)
 	{
-		return (1);
+		if (INT_MAX < num -1)
+		{
+			return (TRUE);
+		}
 	}
-	return (0);
+	else
+	{
+		if (INT_MAX < num)
+		{
+			return (TRUE);
+		}
+	}
+	return (FALSE);
 }
 
 int				ft_atoi(const char *str)
@@ -37,22 +46,22 @@ int				ft_atoi(const char *str)
 	if (str == NULL)
 		return (0);
 	result = 0;
-	is_minus = 1;
-	while (is_space(*str))
+	is_minus = FALSE;
+	while (ft_isspace(*str))
+	{
 		str++;
+	}
 	if (*str == '+' || *str == '-')
 	{
-		is_minus = *str == '-' ? -1 : 1;
+		is_minus = *str == '-' ? TRUE : FALSE;
 		str++;
 	}
 	while (ft_isdigit(*str))
 	{
 		result = result * 10 + (*str - '0');
+		if (is_result_overflow(result, is_minus))
+			return (-1);
 		str++;
 	}
-	if (is_result_overflow(result))
-	{
-		return (-1);
-	}
-	return ((int)(result * is_minus));
+	return ((int)(result * (is_minus ? -1: 1)));
 }
