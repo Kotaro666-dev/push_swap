@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 14:41:33 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/12 14:42:43 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/12 15:25:44 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,6 @@
 # define ERROR 1
 # define TRUE 1
 # define FALSE 0
+# define OVERFLOW -1
 
 #endif
