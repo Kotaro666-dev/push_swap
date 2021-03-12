@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   struct.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 08:00:14 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/12 14:59:16 by kkamashi         ###   ########.fr       */
+/*   Created: 2021/03/12 14:58:17 by kkamashi          #+#    #+#             */
+/*   Updated: 2021/03/12 14:58:42 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#ifndef STRUCT_H
+# define STRUCT_H
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <fcntl.h>
-# include <stdio.h>
-# include "libft.h"
-# include "constant.h"
-# include "utils.h"
-# include "debug.h"
-# include "struct.h"
+typedef struct			s_stack
+{
+	int					value;
+	struct s_stack		*prev;
+	struct s_stack		*next;
+}						t_stack;
+
+typedef struct			s_checker
+{
+	t_stack				*stack_a;
+	t_stack				*stack_b;
+}						t_checker;
 
 #endif

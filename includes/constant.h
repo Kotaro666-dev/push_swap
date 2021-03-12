@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   constant.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 08:00:14 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/12 14:59:16 by kkamashi         ###   ########.fr       */
+/*   Created: 2021/03/12 14:41:33 by kkamashi          #+#    #+#             */
+/*   Updated: 2021/03/12 14:42:43 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
+#ifndef CONSTANT_H
+# define CONSTANT_H
 
-# include <unistd.h>
-# include <stdlib.h>
-# include <fcntl.h>
-# include <stdio.h>
-# include "libft.h"
-# include "constant.h"
-# include "utils.h"
-# include "debug.h"
-# include "struct.h"
+# define SUCCESS 0
+# define ERROR 1
+# define TRUE 1
+# define FALSE 0
 
 #endif
