@@ -6,23 +6,26 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:43:59 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/12 12:35:02 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/14 08:13:02 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-void		print_out_ok(void)
+int			print_out_ok(void)
 {
 	ft_putendl_fd("OK", STDOUT_FILENO);
+	return (SUCCESS);
 }
 
-void		print_out_ko(void)
+int			print_out_ko(void)
 {
 	ft_putendl_fd("KO", STDOUT_FILENO);
+	return (ERROR);
 }
 
-void		print_out_error(void)
+int			print_out_error(void)
 {
 	ft_putendl_fd("ERROR", STDERR_FILENO);
+	return (ERROR);
 }
