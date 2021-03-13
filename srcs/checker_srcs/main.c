@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:02:55 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/13 19:46:54 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/14 07:33:54 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,28 +49,24 @@ int			store_value_in_stack_a(t_stack **stack_a, int num)
 
 int			is_every_number_unique(t_checker *checker)
 {
-	t_stack *current;
+	t_stack	*first;
+	t_stack	*second;
 
-	current = checker->stack_a;
-	while (current->next)
+	first = checker->stack_a;
+	while (first->next)
 	{
-		if (current->value == current->next->value)
+		second = first->next;
+		while (second)
 		{
-			return (FALSE);
+			if (first->value == second->value)
+			{
+				return (FALSE);
+			}
+			second = second->next;
 		}
-		current = current->next;
+		first = first->next;
 	}
 	return (TRUE);
-}
-
-int			quick_sort(t_checker *checker)
-{
-
-}
-
-int			merge_sort(t_checker *checker)
-{
-
 }
 
 int			initialize_stack_a(t_checker *checker, char **argv)
@@ -111,7 +107,6 @@ int		main(int argc, char *argv[])
 		print_out_error();
 		return (0);
 	}
-	// check if every number is unique
 	if (!is_every_number_unique(&checker))
 	{
 		print_out_error();
