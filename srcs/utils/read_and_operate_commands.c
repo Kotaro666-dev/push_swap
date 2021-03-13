@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_stdin.c                                       :+:      :+:    :+:   */
+/*   read_and_operate_commands.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 07:43:33 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/14 08:26:26 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/14 08:51:11 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,17 @@
 
 int		operate_commands(char *line, t_checker *checker)
 {
-	(void)checker;
 	if (!ft_strncmp(line, "sa", 2))
 	{
-
+		swap_a(&(checker->stack_a));
 	}
 	else if (!ft_strncmp(line, "sb", 2))
 	{
-
+		swap_b(&(checker->stack_b));
 	}
 	else if (!ft_strncmp(line, "ss", 2))
 	{
-
+		swap_a_and_b(checker->stack_a, checker->stack_b);
 	}
 	else if (!ft_strncmp(line, "pa", 2))
 	{
@@ -63,6 +62,7 @@ int		operate_commands(char *line, t_checker *checker)
 	{
 		return (ERROR);
 	}
+	print_out_stack_a(checker->stack_a);
 	return (SUCCESS);
 }
 
