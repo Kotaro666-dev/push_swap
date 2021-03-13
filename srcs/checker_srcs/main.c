@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:02:55 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/12 16:06:49 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/13 19:46:54 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ int			initialize_stack_a(t_checker *checker, char **argv)
 	return (SUCCESS);
 }
 
-int main(int argc, char *argv[])
+int		main(int argc, char *argv[])
 {
 	t_checker checker;
 
@@ -111,14 +111,17 @@ int main(int argc, char *argv[])
 		print_out_error();
 		return (0);
 	}
-	// quicksort or mergesort (depending on size of array)
-
-	// check if every number is uniuqe
+	// check if every number is unique
 	if (!is_every_number_unique(&checker))
 	{
 		print_out_error();
 		return (0);
 	}
+	// START READING AND OPERATE COMMANDS
+
+	// CHECK IF STACK_A IS SORTED AND STACK_B IS EMPTY
+
+	// PRINT OUT OK OR KO
 	print_out_stack_a(checker.stack_a);
 	return (0);
 }
