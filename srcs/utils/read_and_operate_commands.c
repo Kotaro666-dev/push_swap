@@ -1,0 +1,101 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   read_stdin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/14 07:43:33 by kkamashi          #+#    #+#             */
+/*   Updated: 2021/03/14 08:26:26 by kkamashi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "utils.h"
+
+int		operate_commands(char *line, t_checker *checker)
+{
+	(void)checker;
+	if (!ft_strncmp(line, "sa", 2))
+	{
+
+	}
+	else if (!ft_strncmp(line, "sb", 2))
+	{
+
+	}
+	else if (!ft_strncmp(line, "ss", 2))
+	{
+
+	}
+	else if (!ft_strncmp(line, "pa", 2))
+	{
+
+	}
+	else if (!ft_strncmp(line, "pb", 2))
+	{
+
+	}
+	else if (!ft_strncmp(line, "ra", 2))
+	{
+
+	}
+	else if (!ft_strncmp(line, "rb", 2))
+	{
+
+	}
+	else if (!ft_strncmp(line, "rr", 2))
+	{
+
+	}
+	else if (!ft_strncmp(line, "rra", 3))
+	{
+
+	}
+	else if (!ft_strncmp(line, "rrb", 3))
+	{
+
+	}
+	else if (!ft_strncmp(line, "rrr", 3))
+	{
+
+	}
+	else
+	{
+		return (ERROR);
+	}
+	return (SUCCESS);
+}
+
+int		read_and_operate_commands(t_checker *checker)
+{
+	int		return_value;
+	char	*line;
+	char	*formatted_line;
+
+	while (TRUE)
+	{
+		return_value = get_next_line(STDIN_FILENO, &line);
+		if (return_value == GNL_EOF)
+		{
+			break ;
+		}
+		else if (return_value == GNL_ERROR)
+		{
+			return (ERROR);
+		}
+		formatted_line = ft_strtrim(line, " ");
+		if (!formatted_line)
+		{
+			return (ERROR);
+		}
+		if (operate_commands(formatted_line, checker) == ERROR)
+		{
+			return (ERROR);
+		}
+		free(line);
+		free(formatted_line);
+	}
+	line = NULL;
+	formatted_line = NULL;
+	return (SUCCESS);
+}
