@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/07 13:17:03 by kkamashi          #+#    #+#             */
-/*   Updated: 2020/07/16 17:16:15 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/14 07:47:22 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 # define GNL_READ		1
 # define GNL_EOF		0
 # define GNL_ERROR		-1
+# define BUFFER_SIZE 1
 
 #endif
