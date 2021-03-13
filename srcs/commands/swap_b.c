@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:18:44 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/13 21:23:45 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/14 08:46:49 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,3 +17,16 @@
 */
 
 #include "commands.h"
+
+void	swap_b(t_stack **stack_b)
+{
+	int temp_value;
+
+	if (*stack_b == NULL || (*stack_b)->next == NULL)
+	{
+		return;
+	}
+	temp_value = (*stack_b)->value;
+	(*stack_b)->value = (*stack_b)->next->value;
+	(*stack_b)->next->value = temp_value;
+}

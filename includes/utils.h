@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:44:25 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/14 08:28:12 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/14 08:40:23 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # include "constant.h"
 # include "struct.h"
 # include "get_next_line.h"
+# include "commands.h"
 
 /*
 ** PRINT_OUT.C
