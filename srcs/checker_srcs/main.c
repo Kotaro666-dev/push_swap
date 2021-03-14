@@ -6,13 +6,13 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:02:55 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/14 07:33:54 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/14 08:27:13 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void		initialize_both_stack(t_checker *checker)
+void		initialize_checker(t_checker *checker)
 {
 	checker->stack_a = NULL;
 	checker->stack_b = NULL;
@@ -101,22 +101,27 @@ int		main(int argc, char *argv[])
 	{
 		return (0);
 	}
-	initialize_both_stack(&checker);
+	initialize_checker(&checker);
 	if (initialize_stack_a(&checker, argv + 1) == ERROR)
 	{
-		print_out_error();
-		return (0);
+		return (print_out_error());
 	}
 	if (!is_every_number_unique(&checker))
 	{
-		print_out_error();
-		return (0);
+		return (print_out_error());
 	}
-	// START READING AND OPERATE COMMANDS
-
-	// CHECK IF STACK_A IS SORTED AND STACK_B IS EMPTY
-
-	// PRINT OUT OK OR KO
-	print_out_stack_a(checker.stack_a);
-	return (0);
+	if (read_and_operate_commands(&checker) == ERROR)
+	{
+		return (print_out_error());
+	}
+	if (!is_stack_sorted(checker.stack_a))
+	{
+		return (print_out_ko());
+	}
+	if (!is_stack_empty(checker.stack_b))
+	{
+		return (print_out_ko());
+	}
+	// print_out_stack_a(checker.stack_a);
+	return (print_out_ok());
 }
