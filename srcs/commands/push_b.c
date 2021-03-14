@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:30 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/14 09:08:57 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/15 08:05:45 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	push_b(t_stack **stack_a, t_stack **stack_b)
 	if (*stack_b == NULL)
 	{
 		*stack_b = head_stack_a;
-		(*stack_a)->prev = NULL;
-		(*stack_a)->next = NULL;
+		(*stack_b)->prev = NULL;
+		(*stack_b)->next = NULL;
 		return ;
 	}
 	temp = *stack_b;
