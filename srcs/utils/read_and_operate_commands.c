@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 07:43:33 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/14 09:11:38 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/15 08:49:19 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,15 @@ int		operate_commands(char *line, t_checker *checker)
 	}
 	else if (!ft_strncmp(line, "ra", 2))
 	{
-
+		rotate_a(&(checker->stack_a));
 	}
 	else if (!ft_strncmp(line, "rb", 2))
 	{
-
+		rotate_b(&(checker->stack_b));
 	}
 	else if (!ft_strncmp(line, "rr", 2))
 	{
-
+		rotate_a_and_b(checker->stack_a, checker->stack_b);
 	}
 	else if (!ft_strncmp(line, "rra", 3))
 	{
