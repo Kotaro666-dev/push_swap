@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:26 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/13 21:24:41 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/14 09:14:23 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,26 @@
 
 #include "commands.h"
 
-void	push_a(t_stack *stack_a)
+void	push_a(t_stack **stack_a, t_stack **stack_b)
 {
+	t_stack *head_stack_b;
+	t_stack *temp;
 
+	if ((*stack_b) == NULL)
+	{
+		return ;
+	}
+	head_stack_b = *stack_b;
+	*stack_b = head_stack_b->next;
+	if (*stack_a == NULL)
+	{
+		*stack_a = head_stack_b;
+		(*stack_a)->prev = NULL;
+		(*stack_a)->next = NULL;
+		return ;
+	}
+	temp = *stack_a;
+	*stack_a = head_stack_b;
+	(*stack_a)->prev = NULL;
+	(*stack_a)->next = temp;
 }
