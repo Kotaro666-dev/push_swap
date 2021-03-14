@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 07:43:33 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/14 08:51:11 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/14 09:11:38 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ int		operate_commands(char *line, t_checker *checker)
 	}
 	else if (!ft_strncmp(line, "pa", 2))
 	{
-
+		push_a(&(checker->stack_a), &(checker->stack_b));
 	}
 	else if (!ft_strncmp(line, "pb", 2))
 	{
-
+		push_b(&(checker->stack_a), &(checker->stack_b));
 	}
 	else if (!ft_strncmp(line, "ra", 2))
 	{
@@ -62,7 +62,10 @@ int		operate_commands(char *line, t_checker *checker)
 	{
 		return (ERROR);
 	}
-	print_out_stack_a(checker->stack_a);
+	printf("---- stack_a -----\n");
+	print_out_stack(checker->stack_a);
+	printf("---- stack_b -----\n");
+	print_out_stack(checker->stack_b);
 	return (SUCCESS);
 }
 
