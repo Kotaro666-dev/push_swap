@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 07:43:33 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/16 15:52:26 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/16 17:49:46 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ int		read_and_operate_commands(t_checker *checker)
 		return_value = get_next_line(STDIN_FILENO, &line);
 		if (return_value == GNL_EOF)
 		{
+			free(line);
 			break ;
 		}
 		else if (return_value == GNL_ERROR)
