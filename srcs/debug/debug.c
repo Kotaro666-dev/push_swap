@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 14:44:50 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/16 15:54:07 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/16 16:10:18 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,18 @@ void	print_out_stack(t_stack *stack_a, t_stack *stack_b)
 			printf("%d ", current_a->value);
 			current_a = current_a->next;
 		}
+		else
+		{
+			printf("  ");
+		}
 		if (current_b)
 		{
-			printf("%d ", current_b->value);
+			printf("%d", current_b->value);
 			current_b = current_b->next;
+		}
+		else
+		{
+			printf(" ");
 		}
 		printf("\n");
 	}
