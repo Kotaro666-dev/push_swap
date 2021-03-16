@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:15 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/16 15:23:20 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/16 15:48:00 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,25 @@
 
 void	reverse_rotate_b(t_stack **stack_b)
 {
-	(void)stack_b;
+	t_stack *tail;
+
+	if (*stack_b == NULL || (*stack_b)->next == NULL)
+	{
+		return ;
+	}
+	while ((*stack_b)->next)
+	{
+		*stack_b = (*stack_b)->next;
+	}
+	tail = *stack_b;
+	*stack_b = (*stack_b)->prev;
+	(*stack_b)->next = NULL;
+	while ((*stack_b)->prev)
+	{
+		*stack_b = (*stack_b)->prev;
+	}
+	tail->prev = NULL;
+	tail->next = *stack_b;
+	(*stack_b)->prev = tail;
+	*stack_b = (*stack_b)->prev;
 }

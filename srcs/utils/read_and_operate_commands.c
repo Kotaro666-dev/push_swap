@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 07:43:33 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/16 15:30:08 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/16 15:52:26 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,7 @@ int		operate_commands(char *line, t_checker *checker)
 	{
 		return (ERROR);
 	}
-	printf("---- stack_a -----\n");
-	print_out_stack(checker->stack_a);
-	printf("---- stack_b -----\n");
-	print_out_stack(checker->stack_b);
+	print_out_stack(checker->stack_a, checker->stack_b);
 	return (SUCCESS);
 }
 
@@ -75,6 +72,7 @@ int		read_and_operate_commands(t_checker *checker)
 	char	*line;
 	char	*formatted_line;
 
+	print_out_stack(checker->stack_a, checker->stack_b);
 	while (TRUE)
 	{
 		return_value = get_next_line(STDIN_FILENO, &line);
