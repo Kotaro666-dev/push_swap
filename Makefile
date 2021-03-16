@@ -6,7 +6,7 @@
 #    By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/11 08:08:33 by kkamashi          #+#    #+#              #
-#    Updated: 2021/03/14 07:50:24 by kkamashi         ###   ########.fr        #
+#    Updated: 2021/03/16 17:30:24 by kkamashi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ PUSH_SWAP = push_swap
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-DEBUG = -g -fsanitize=address
+DEBUG = # -g -fsanitize=address
 DEPENDENCY_OPTION = -MMD -MP -MF
 LIBS_DIR = ./libs
 RM = rm -f
