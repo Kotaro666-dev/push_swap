@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:13 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/16 15:25:04 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/16 22:46:28 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 #include "commands.h"
 
-void	reverse_rotate_a_and_b(t_checker *checker)
+void	reverse_rotate_a_and_b(t_main *main)
 {
-	reverse_rotate_a(&(checker->stack_a));
-	reverse_rotate_b(&(checker->stack_b));
+	reverse_rotate_a(&(main->stack_a));
+	reverse_rotate_b(&(main->stack_b));
 }

@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 14:58:17 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/16 22:14:05 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/16 22:43:27 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,10 @@ typedef struct			s_stack
 	struct s_stack		*next;
 }						t_stack;
 
-typedef struct			s_checker
+typedef struct			s_main
 {
 	t_stack				*stack_a;
 	t_stack				*stack_b;
-}						t_checker;
-
-typedef struct			s_push_swap
-{
-	t_stack				*stack_a;
-	t_stack				*stack_b;
-}						t_push_swap;
+}						t_main;
 
 #endif

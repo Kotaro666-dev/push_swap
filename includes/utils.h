@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:44:25 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/16 22:36:36 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/16 22:49:26 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,7 @@ int			is_every_number_unique(t_stack *stack);
 **	READ_AND_OPERATE_COMMANDS.C
 */
 
-int		read_and_operate_commands_checker(t_checker *checker);
-int		read_and_operate_commands_push_swap(t_push_swap *push_swap);
+int		read_and_operate_commands(t_main *main);
 
 
 /*
@@ -56,9 +55,10 @@ void		free_stack(t_stack **stack);
 void		free_memory(t_stack **stack_a, t_stack **stack_b);
 
 /*
-** INITIALIZE_STACK_A.C
+** INITIALIZE.C
 */
 
+void		initialize_checker(t_main *main);
 int			store_value_in_stack_a(t_stack **stack_a, int num);
 int			initialize_stack_a(t_stack **stack, char **argv);
 

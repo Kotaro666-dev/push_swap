@@ -6,11 +6,17 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 22:28:38 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/16 22:28:59 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/16 22:48:17 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
+
+void		initialize_checker(t_main *main)
+{
+	main->stack_a = NULL;
+	main->stack_b = NULL;
+}
 
 int			store_value_in_stack_a(t_stack **stack_a, int num)
 {
