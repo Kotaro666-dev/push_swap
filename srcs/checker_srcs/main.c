@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:02:55 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/16 22:30:23 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/16 22:39:29 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		main(int argc, char *argv[])
 	{
 		return (print_out_error());
 	}
-	if (read_and_operate_commands(&checker) == ERROR)
+	if (read_and_operate_commands_checker(&checker) == ERROR)
 	{
 		return (print_out_error());
 	}
