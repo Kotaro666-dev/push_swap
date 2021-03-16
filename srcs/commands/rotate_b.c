@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:36 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/16 14:39:08 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/16 15:20:57 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	rotate_b(t_stack **stack_b)
 		*stack_b = (*stack_b)->next;
 	}
 	head->next = NULL;
-	head->prev = *stack_b;
+	head->prev = *stack_b; // 3 2 1
 	(*stack_b)->next = head;
 	while ((*stack_b)->prev)
 	{
