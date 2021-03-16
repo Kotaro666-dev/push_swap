@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:02:55 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/14 08:27:13 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/16 17:36:54 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,31 @@ int			initialize_stack_a(t_checker *checker, char **argv)
 	return (SUCCESS);
 }
 
+void	free_stack(t_stack **stack)
+{
+	t_stack *current;
+	t_stack *next;
+
+	if (*stack == NULL)
+	{
+		return ;
+	}
+	current = *stack;
+	while (current)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
+}
+
+void	dispose_memory(t_checker *checker)
+{
+	free_stack(&(checker->stack_a));
+	free_stack(&(checker->stack_b));
+
+}
+
 int		main(int argc, char *argv[])
 {
 	t_checker checker;
@@ -122,6 +147,6 @@ int		main(int argc, char *argv[])
 	{
 		return (print_out_ko());
 	}
-	// print_out_stack_a(checker.stack_a);
+	dispose_memory(&checker);
 	return (print_out_ok());
 }
