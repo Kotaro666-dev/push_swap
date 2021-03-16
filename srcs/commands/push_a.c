@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:26 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/14 09:14:23 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/16 15:18:37 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	push_a(t_stack **stack_a, t_stack **stack_b)
 	}
 	temp = *stack_a;
 	*stack_a = head_stack_b;
+	temp->prev = head_stack_b;
 	(*stack_a)->prev = NULL;
 	(*stack_a)->next = temp;
 }
