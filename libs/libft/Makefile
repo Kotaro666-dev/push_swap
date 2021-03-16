@@ -6,7 +6,7 @@
 #    By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/24 08:21:08 by kkamashi          #+#    #+#              #
-#    Updated: 2020/12/13 19:14:41 by kkamashi         ###   ########.fr        #
+#    Updated: 2021/03/16 15:28:55 by kkamashi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,8 @@ SRCS =	ft_atoi.c \
 		ft_toupper.c \
 		ft_swap.c \
 		ft_bubblesort.c \
-		ft_qsort.c
+		ft_qsort.c \
+		ft_strcmp.c
 OBJS = $(SRCS:.c=.o)
 
 BONUS_SRCS =	ft_lstnew.c \
