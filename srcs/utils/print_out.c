@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:43:59 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/14 08:13:02 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/16 17:26:59 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int			print_out_ok(void)
 int			print_out_ko(void)
 {
 	ft_putendl_fd("KO", STDOUT_FILENO);
-	return (ERROR);
+	return (SUCCESS);
 }
 
 int			print_out_error(void)
