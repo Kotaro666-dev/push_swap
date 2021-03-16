@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 14:40:33 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/14 08:27:40 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/16 22:27:07 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,28 @@ int		is_stack_sorted(t_stack *stack)
 			return (FALSE);
 		}
 		current = current->next;
+	}
+	return (TRUE);
+}
+
+int			is_every_number_unique(t_stack *stack)
+{
+	t_stack	*first;
+	t_stack	*second;
+
+	first = stack;
+	while (first->next)
+	{
+		second = first->next;
+		while (second)
+		{
+			if (first->value == second->value)
+			{
+				return (FALSE);
+			}
+			second = second->next;
+		}
+		first = first->next;
 	}
 	return (TRUE);
 }
