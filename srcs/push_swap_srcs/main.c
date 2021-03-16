@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:04:09 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/16 22:50:59 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/17 07:49:07 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int			main(int argc, char *argv[])
 	{
 		return (0);
 	}
-	initialize_checker(&main);
-	if (initialize_stack_a(&(main.stack_a), argv + 1) == ERROR)
+	initialize_struct(&main);
+	if (initialize_stack_a(&main, argv + 1) == ERROR)
 	{
 		return (print_out_error());
 	}
@@ -29,18 +29,15 @@ int			main(int argc, char *argv[])
 	{
 		return (print_out_error());
 	}
-	if (read_and_operate_commands(&main) == ERROR)
-	{
-		return (print_out_error());
-	}
-	if (!is_stack_sorted(main.stack_a))
-	{
-		return (print_out_ko());
-	}
-	if (!is_stack_empty(main.stack_b))
-	{
-		return (print_out_ko());
-	}
+	// SORT
+	// if (!is_stack_sorted(main.stack_a))
+	// {
+	// 	return (print_out_ko());
+	// }
+	// if (!is_stack_empty(main.stack_b))
+	// {
+	// 	return (print_out_ko());
+	// }
 	free_memory(&(main.stack_a), &(main.stack_b));
 	return (print_out_ok());
 }

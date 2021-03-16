@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:02:55 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/16 22:52:06 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/17 07:48:39 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ int		main(int argc, char *argv[])
 	{
 		return (0);
 	}
-	initialize_checker(&main);
-	if (initialize_stack_a(&(main.stack_a), argv + 1) == ERROR)
+	initialize_struct(&main);
+	if (initialize_stack_a(&main, argv + 1) == ERROR)
 	{
 		return (print_out_error());
 	}

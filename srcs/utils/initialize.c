@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   initialize_stack_a.c                               :+:      :+:    :+:   */
+/*   initialize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 22:28:38 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/16 22:48:17 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/17 07:47:53 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-void		initialize_checker(t_main *main)
+void		initialize_struct(t_main *main)
 {
 	main->stack_a = NULL;
 	main->stack_b = NULL;
+	main->size = 0;
+	main->count = 0;
 }
 
 int			store_value_in_stack_a(t_stack **stack_a, int num)
@@ -47,7 +49,7 @@ int			store_value_in_stack_a(t_stack **stack_a, int num)
 	return (SUCCESS);
 }
 
-int			initialize_stack_a(t_stack **stack, char **argv)
+int			initialize_stack_a(t_main *main, char **argv)
 {
 	int num;
 
@@ -61,10 +63,11 @@ int			initialize_stack_a(t_stack **stack, char **argv)
 		{
 			return (ERROR);
 		}
-		if (store_value_in_stack_a(stack, num) == ERROR)
+		if (store_value_in_stack_a(&(main->stack_a), num) == ERROR)
 		{
 			return (ERROR);
 		}
+		main->size++;
 		argv++;
 	}
 	return (SUCCESS);
