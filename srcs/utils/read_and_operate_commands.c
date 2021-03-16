@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 07:43:33 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/16 14:38:20 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/16 15:30:08 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,49 +14,49 @@
 
 int		operate_commands(char *line, t_checker *checker)
 {
-	if (!ft_strncmp(line, "sa", 2))
+	if (!ft_strcmp(line, "sa"))
 	{
 		swap_a(&(checker->stack_a));
 	}
-	else if (!ft_strncmp(line, "sb", 2))
+	else if (!ft_strcmp(line, "sb"))
 	{
 		swap_b(&(checker->stack_b));
 	}
-	else if (!ft_strncmp(line, "ss", 2))
+	else if (!ft_strcmp(line, "ss"))
 	{
 		swap_a_and_b(checker);
 	}
-	else if (!ft_strncmp(line, "pa", 2))
+	else if (!ft_strcmp(line, "pa"))
 	{
 		push_a(&(checker->stack_a), &(checker->stack_b));
 	}
-	else if (!ft_strncmp(line, "pb", 2))
+	else if (!ft_strcmp(line, "pb"))
 	{
 		push_b(&(checker->stack_a), &(checker->stack_b));
 	}
-	else if (!ft_strncmp(line, "ra", 2))
+	else if (!ft_strcmp(line, "ra"))
 	{
 		rotate_a(&(checker->stack_a));
 	}
-	else if (!ft_strncmp(line, "rb", 2))
+	else if (!ft_strcmp(line, "rb"))
 	{
 		rotate_b(&(checker->stack_b));
 	}
-	else if (!ft_strncmp(line, "rr", 2))
+	else if (!ft_strcmp(line, "rr"))
 	{
 		rotate_a_and_b(checker);
 	}
-	else if (!ft_strncmp(line, "rra", 3))
+	else if (!ft_strcmp(line, "rra"))
 	{
-
+		reverse_rotate_a(&(checker->stack_a));
 	}
-	else if (!ft_strncmp(line, "rrb", 3))
+	else if (!ft_strcmp(line, "rrb"))
 	{
-
+		reverse_rotate_b(&(checker->stack_b));
 	}
-	else if (!ft_strncmp(line, "rrr", 3))
+	else if (!ft_strcmp(line, "rrr"))
 	{
-
+		reverse_rotate_a_and_b(checker);
 	}
 	else
 	{

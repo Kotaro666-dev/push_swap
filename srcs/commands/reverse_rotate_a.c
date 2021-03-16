@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:17 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/13 21:23:19 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/16 15:30:56 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,3 +17,8 @@
 */
 
 #include "commands.h"
+
+void	reverse_rotate_a(t_stack **stack_a)
+{
+	(void)stack_a;
+}
