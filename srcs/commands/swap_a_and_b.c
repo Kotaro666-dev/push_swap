@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:23 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/14 08:49:06 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/16 14:38:13 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 #include "commands.h"
 
-void	swap_a_and_b(t_stack *stack_a, t_stack *stack_b)
+void	swap_a_and_b(t_checker *checker)
 {
-	swap_a(&(stack_a));
-	swap_b(&(stack_b));
+	swap_a(&(checker->stack_a));
+	swap_b(&(checker->stack_b));
 }

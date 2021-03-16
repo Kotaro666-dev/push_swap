@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 07:43:33 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/15 08:49:19 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/16 14:38:20 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		operate_commands(char *line, t_checker *checker)
 	}
 	else if (!ft_strncmp(line, "ss", 2))
 	{
-		swap_a_and_b(checker->stack_a, checker->stack_b);
+		swap_a_and_b(checker);
 	}
 	else if (!ft_strncmp(line, "pa", 2))
 	{
@@ -44,7 +44,7 @@ int		operate_commands(char *line, t_checker *checker)
 	}
 	else if (!ft_strncmp(line, "rr", 2))
 	{
-		rotate_a_and_b(checker->stack_a, checker->stack_b);
+		rotate_a_and_b(checker);
 	}
 	else if (!ft_strncmp(line, "rra", 3))
 	{
