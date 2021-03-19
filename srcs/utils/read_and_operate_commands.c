@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 07:43:33 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/16 22:46:52 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/19 14:21:43 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,25 @@
 int		operate_commands(char *line, t_main *main)
 {
 	if (!ft_strcmp(line, "sa"))
-		swap_a(&(main->stack_a));
+		swap_a(main);
 	else if (!ft_strcmp(line, "sb"))
-		swap_b(&(main->stack_b));
+		swap_b(main);
 	else if (!ft_strcmp(line, "ss"))
 		swap_a_and_b(main);
 	else if (!ft_strcmp(line, "pa"))
-		push_a(&(main->stack_a), &(main->stack_b));
+		push_a(main);
 	else if (!ft_strcmp(line, "pb"))
-		push_b(&(main->stack_a), &(main->stack_b));
+		push_b(main);
 	else if (!ft_strcmp(line, "ra"))
-		rotate_a(&(main->stack_a));
+		rotate_a(main);
 	else if (!ft_strcmp(line, "rb"))
-		rotate_b(&(main->stack_b));
+		rotate_b(main);
 	else if (!ft_strcmp(line, "rr"))
 		rotate_a_and_b(main);
 	else if (!ft_strcmp(line, "rra"))
-		reverse_rotate_a(&(main->stack_a));
+		reverse_rotate_a(main);
 	else if (!ft_strcmp(line, "rrb"))
-		reverse_rotate_b(&(main->stack_b));
+		reverse_rotate_b(main);
 	else if (!ft_strcmp(line, "rrr"))
 		reverse_rotate_a_and_b(main);
 	else
