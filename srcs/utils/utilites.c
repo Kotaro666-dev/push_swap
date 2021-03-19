@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 14:40:33 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/19 19:40:26 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/19 20:42:39 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,15 @@ int		is_stack_empty(t_stack *stack)
 int		is_stack_sorted(t_stack *stack)
 {
 	t_stack *current;
+	t_stack *head;
 
 	if (stack == NULL)
 	{
 		return (TRUE);
 	}
 	current = stack;
-	while (current->next)
+	head = stack;
+	while (current->next != head)
 	{
 		if (current->value > current->next->value)
 		{
