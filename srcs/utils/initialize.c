@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 22:28:38 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/19 16:58:24 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/19 19:24:42 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ static int		store_value_in_stack_a(t_main *main, int num)
 {
 	t_stack	**stack_a;
 	t_stack	*new;
-	t_stack	*current;
 
 	stack_a = &(main->stack_a);
 	new = (t_stack *)malloc(sizeof(t_stack));
@@ -39,19 +38,15 @@ static int		store_value_in_stack_a(t_main *main, int num)
 	if (*stack_a == NULL)
 	{
 		*stack_a = new;
-		new->prev = NULL;
-		new->next = NULL;
+		new->prev = new;
+		new->next = new;
 	}
 	else
 	{
-		current = *stack_a;
-		while (current->next)
-		{
-			current = current->next;
-		}
-		current->next = new;
-		new->prev = current;
-		new->next = NULL;
+		new->next = *stack_a;
+		new->prev = (*stack_a)->prev;
+		(*stack_a)->prev->next = new;
+		(*stack_a)->prev = new;
 	}
 	return (SUCCESS);
 }

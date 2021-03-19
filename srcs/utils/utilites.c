@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 14:40:33 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/16 22:27:07 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/19 19:40:26 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,14 @@ int			is_every_number_unique(t_stack *stack)
 {
 	t_stack	*first;
 	t_stack	*second;
+	t_stack *head;
 
 	first = stack;
-	while (first->next)
+	head = stack;
+	while (first->next != head)
 	{
 		second = first->next;
-		while (second)
+		while (second != head)
 		{
 			if (first->value == second->value)
 			{
