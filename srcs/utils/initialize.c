@@ -6,13 +6,13 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 22:28:38 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/19 13:37:06 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/19 16:58:24 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-void		initialize_struct(t_main *main)
+void			initialize_struct(t_main *main)
 {
 	main->stack_a = NULL;
 	main->stack_b = NULL;
@@ -23,11 +23,13 @@ void		initialize_struct(t_main *main)
 	main->bottom = 0;
 }
 
-int			store_value_in_stack_a(t_stack **stack_a, int num)
+static int		store_value_in_stack_a(t_main *main, int num)
 {
-	t_stack *new;
-	t_stack *current;
+	t_stack	**stack_a;
+	t_stack	*new;
+	t_stack	*current;
 
+	stack_a = &(main->stack_a);
 	new = (t_stack *)malloc(sizeof(t_stack));
 	if (!new)
 	{
@@ -39,20 +41,22 @@ int			store_value_in_stack_a(t_stack **stack_a, int num)
 		*stack_a = new;
 		new->prev = NULL;
 		new->next = NULL;
-		return (SUCCESS);
 	}
-	current = *stack_a;
-	while (current->next)
+	else
 	{
-		current = current->next;
+		current = *stack_a;
+		while (current->next)
+		{
+			current = current->next;
+		}
+		current->next = new;
+		new->prev = current;
+		new->next = NULL;
 	}
-	current->next = new;
-	new->prev = current;
-	new->next = NULL;
 	return (SUCCESS);
 }
 
-int			initialize_stack_a(t_main *main, char **argv)
+int				initialize_stack_a(t_main *main, char **argv)
 {
 	int num;
 
@@ -66,7 +70,7 @@ int			initialize_stack_a(t_main *main, char **argv)
 		{
 			return (ERROR);
 		}
-		if (store_value_in_stack_a(&(main->stack_a), num) == ERROR)
+		if (store_value_in_stack_a(main, num) == ERROR)
 		{
 			return (ERROR);
 		}
