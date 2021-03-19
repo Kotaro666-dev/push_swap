@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:13 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/16 22:46:28 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/19 14:00:53 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@
 
 void	reverse_rotate_a_and_b(t_main *main)
 {
-	reverse_rotate_a(&(main->stack_a));
-	reverse_rotate_b(&(main->stack_b));
+	reverse_rotate_a(main);
+	reverse_rotate_b(main);
 }

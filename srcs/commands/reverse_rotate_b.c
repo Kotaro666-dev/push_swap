@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:15 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/16 15:48:00 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/19 14:02:03 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@
 
 #include "commands.h"
 
-void	reverse_rotate_b(t_stack **stack_b)
+void	reverse_rotate_b(t_main *main)
 {
+	t_stack **stack_b;
 	t_stack *tail;
 
+	stack_b = &(main->stack_b);
 	if (*stack_b == NULL || (*stack_b)->next == NULL)
 	{
 		return ;
@@ -41,4 +43,5 @@ void	reverse_rotate_b(t_stack **stack_b)
 	tail->next = *stack_b;
 	(*stack_b)->prev = tail;
 	*stack_b = (*stack_b)->prev;
+	main->count++;
 }
