@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 16:54:19 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/19 16:55:19 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/19 21:39:17 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 static int			find_perfect_position(t_main *main, int target)
 {
-	t_stack *current;
+	t_stack	*current;
+	t_stack	*head;
 	int		position;
 
 	current = main->stack_a->next;
+	head = main->stack_a;
 	position = 0;
-	while (current)
+	while (current != head)
 	{
 		if (target < current->value)
 		{
@@ -35,11 +37,10 @@ static int			is_target_right_position(t_main *main, int target)
 {
 	t_stack *current;
 	t_stack *head;
-	t_stack *tail;
 
 	current = main->stack_a;
 	head = main->stack_a;
-	while (current)
+	while (current->next != head)
 	{
 		if (current->value == target)
 		{
@@ -47,27 +48,10 @@ static int			is_target_right_position(t_main *main, int target)
 		}
 		current = current->next;
 	}
-	if (!current->prev)
-	{
-		tail = current;
-		while (tail->next)
-		{
-			tail = tail->next;
-		}
-		if (current->value > tail->value &&
-		current->value < current->next->value)
-		{
-			return (TRUE);
-		}
-		else
-		{
-			return (FALSE);
-		}
-	}
-	if (!current->next)
+	if (current == head)
 	{
 		if (current->value > current->prev->value &&
-			current->value > head->value)
+			current->value < current->next->value)
 		{
 			return (TRUE);
 		}
@@ -76,18 +60,33 @@ static int			is_target_right_position(t_main *main, int target)
 			return (FALSE);
 		}
 	}
-	if (current->value > current->prev->value &&
-		current->value < current->next->value)
+	else if (current->next == head)
 	{
-		return (TRUE);
+		if (current->value > current->prev->value &&
+			current->value > current->next->value)
+		{
+			return (TRUE);
+		}
+		else
+		{
+			return (FALSE);
+		}
 	}
 	else
 	{
-		return (FALSE);
+		if (current->value > current->prev->value &&
+			current->value < current->next->value)
+		{
+			return (TRUE);
+		}
+		else
+		{
+			return (FALSE);
+		}
 	}
 }
 
-void		sort_stack_with_more_than_four_numbers(t_main *main)
+void			sort_stack_with_more_than_four_numbers(t_main *main)
 {
 	int	position;
 	int	target;
@@ -97,25 +96,27 @@ void		sort_stack_with_more_than_four_numbers(t_main *main)
 		push_b(main);
 		main->size--;
 	}
+	sort_stack_with_three_numbers(main);
 	while (!is_stack_empty(main->stack_b))
 	{
 		push_a(main);
 		main->size++;
 		target = main->stack_a->value;
 		position = find_perfect_position(main, target);
-		if (position < main->size / 2)
+		if (position == 0)
+		{
+			continue;
+		}
+		else if (position == main->size - 1)
+		{
+			rotate_a(main);
+		}
+		else if (position < main->size / 2)
 		{
 			while (!is_target_right_position(main, target))
 			{
-				if (is_stack_sorted(main->stack_a))
-				{
-					return ;
-				}
-				// 無限ループに陥る。双方向循環リストにしたほうがいい。
 				swap_a(main);
 				rotate_a(main);
-				// print_out_stack(main->stack_a, main->stack_b);
-				// return ;
 			}
 			while (!is_stack_sorted(main->stack_a))
 			{
@@ -126,15 +127,8 @@ void		sort_stack_with_more_than_four_numbers(t_main *main)
 		{
 			while (!is_target_right_position(main, target))
 			{
-				if (is_stack_sorted(main->stack_a))
-				{
-					return ;
-				}
-				// 無限ループに陥る。双方向循環リストにしたほうがいい。
 				reverse_rotate_a(main);
 				swap_a(main);
-				// print_out_stack(main->stack_a, main->stack_b);
-				// return ;
 			}
 			while (!is_stack_sorted(main->stack_a))
 			{
