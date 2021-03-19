@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 22:25:58 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/16 22:26:16 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/19 19:46:06 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	free_stack(t_stack **stack)
 {
 	t_stack *current;
+	t_stack *head;
 	t_stack *next;
 
 	if (*stack == NULL)
@@ -22,7 +23,8 @@ void	free_stack(t_stack **stack)
 		return ;
 	}
 	current = *stack;
-	while (current)
+	head = *stack;
+	while (current->next != head)
 	{
 		next = current->next;
 		free(current);
