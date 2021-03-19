@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:18:44 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/14 08:46:49 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/19 13:43:35 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@
 
 #include "commands.h"
 
-void	swap_b(t_stack **stack_b)
+void	swap_b(t_main *main)
 {
-	int temp_value;
+	int		temp_value;
+	t_stack	**stack_b;
 
+	stack_b = &(main->stack_b);
 	if (*stack_b == NULL || (*stack_b)->next == NULL)
 	{
 		return;
@@ -29,4 +31,5 @@ void	swap_b(t_stack **stack_b)
 	temp_value = (*stack_b)->value;
 	(*stack_b)->value = (*stack_b)->next->value;
 	(*stack_b)->next->value = temp_value;
+	main->count++;
 }
