@@ -1,3 +1,4 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -17,5 +18,6 @@
 # include "struct.h"
 
 void	print_out_stack(t_stack *stack_a, t_stack *stack_b);
+void	print_out_count(t_main *main);
 
 #endif
