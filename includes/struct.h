@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 14:58:17 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/17 07:45:05 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/19 13:35:09 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ typedef struct			s_main
 	t_stack				*stack_b;
 	int					size;
 	int					count;
+	int					top;
+	int					middle;
+	int					bottom;
 }						t_main;
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 22:28:38 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/17 07:47:53 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/19 13:37:06 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@ void		initialize_struct(t_main *main)
 	main->stack_b = NULL;
 	main->size = 0;
 	main->count = 0;
+	main->top = 0;
+	main->middle = 0;
+	main->bottom = 0;
 }
 
 int			store_value_in_stack_a(t_stack **stack_a, int num)
