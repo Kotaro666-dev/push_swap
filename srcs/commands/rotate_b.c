@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:36 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/19 13:58:32 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/19 19:48:44 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,26 +21,39 @@
 void	rotate_b(t_main *main)
 {
 	t_stack **stack_b;
-	t_stack *head;
 
 	stack_b = &(main->stack_b);
-	if (*stack_b == NULL || (*stack_b)->next == NULL)
+	if (*stack_b == NULL)
 	{
 		return ;
 	}
-	head = *stack_b;
 	*stack_b = (*stack_b)->next;
-	(*stack_b)->prev = NULL;
-	while ((*stack_b)->next)
-	{
-		*stack_b = (*stack_b)->next;
-	}
-	head->next = NULL;
-	head->prev = *stack_b;
-	(*stack_b)->next = head;
-	while ((*stack_b)->prev)
-	{
-		*stack_b = (*stack_b)->prev;
-	}
 	main->count++;
 }
+
+// void	rotate_b(t_main *main)
+// {
+// 	t_stack **stack_b;
+// 	t_stack *head;
+
+// 	stack_b = &(main->stack_b);
+// 	if (*stack_b == NULL || (*stack_b)->next == NULL)
+// 	{
+// 		return ;
+// 	}
+// 	head = *stack_b;
+// 	*stack_b = (*stack_b)->next;
+// 	(*stack_b)->prev = NULL;
+// 	while ((*stack_b)->next)
+// 	{
+// 		*stack_b = (*stack_b)->next;
+// 	}
+// 	head->next = NULL;
+// 	head->prev = *stack_b;
+// 	(*stack_b)->next = head;
+// 	while ((*stack_b)->prev)
+// 	{
+// 		*stack_b = (*stack_b)->prev;
+// 	}
+// 	main->count++;
+// }

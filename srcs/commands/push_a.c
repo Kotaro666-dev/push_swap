@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:26 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/19 13:55:28 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/19 20:41:18 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,33 +23,37 @@ void	push_a(t_main *main)
 	t_stack **stack_a;
 	t_stack **stack_b;
 	t_stack *head_stack_b;
-	t_stack *temp;
 
 	stack_a = &(main->stack_a);
 	stack_b = &(main->stack_b);
-	if ((*stack_b) == NULL)
+	if (*stack_b == NULL)
 	{
 		return ;
 	}
 	head_stack_b = *stack_b;
-	head_stack_b->prev = NULL;
-	*stack_b = (*stack_b)->next;
-	if (*stack_b)
+	if (head_stack_b == (*stack_b)->next)
 	{
-		(*stack_b)->prev = NULL;
+		*stack_b = NULL;
+	}
+	else
+	{
+		*stack_b = head_stack_b->next;
+		(*stack_b)->prev->prev->next = *stack_b;
+		(*stack_b)->prev = (*stack_b)->prev->prev;
 	}
 	if (*stack_a == NULL)
 	{
 		*stack_a = head_stack_b;
-		head_stack_b->prev = NULL;
-		head_stack_b->next = NULL;
+		head_stack_b->prev = head_stack_b;
+		head_stack_b->next = head_stack_b;
 	}
 	else
 	{
-		temp = *stack_a;
-		head_stack_b->next = temp;
-		temp->prev = head_stack_b;
-		*stack_a = head_stack_b;
+		head_stack_b->next = *stack_a;
+		head_stack_b->prev = (*stack_a)->prev;
+		(*stack_a)->prev->next = head_stack_b;
+		(*stack_a)->prev = head_stack_b;
+		*stack_a = (*stack_a)->prev;
 	}
 	main->count++;
 }
