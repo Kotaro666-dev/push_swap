@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:02:55 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/19 13:47:15 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/20 08:43:20 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ int		main(int argc, char *argv[])
 	{
 		return (0);
 	}
-	initialize_struct(&main);
+	if (initialize_struct(&main, argc) == MALLOC_ERROR)
+	{
+		return (MALLOC_ERROR);
+	}
 	if (initialize_stack_a(&main, argv + 1) == ERROR)
 	{
 		return (print_out_error());
