@@ -6,21 +6,27 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 22:28:38 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/19 19:24:42 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/20 08:48:40 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-void			initialize_struct(t_main *main)
+int				initialize_struct(t_main *main, int argc)
 {
 	main->stack_a = NULL;
 	main->stack_b = NULL;
+	main->array = (int *)malloc(sizeof(int) * (argc + 10));
+	if (main->array == NULL)
+	{
+		return (MALLOC_ERROR);
+	}
 	main->size = 0;
 	main->count = 0;
 	main->top = 0;
 	main->middle = 0;
 	main->bottom = 0;
+	return (SUCCESS);
 }
 
 static int		store_value_in_stack_a(t_main *main, int num)
@@ -53,15 +59,16 @@ static int		store_value_in_stack_a(t_main *main, int num)
 
 int				initialize_stack_a(t_main *main, char **argv)
 {
-	int num;
+	int	num;
 
-	while (*argv)
+	while (argv[main->size])
 	{
-		if (!is_arg_numeric(*argv))
+		if (!is_arg_numeric(argv[main->size]))
 		{
 			return (ERROR);
 		}
-		if ((num = ft_atoi(*argv)) == OVERFLOW && ft_strcmp(*argv, "-1") != 0)
+		if ((num = ft_atoi(argv[main->size])) == OVERFLOW &&
+			ft_strcmp(argv[main->size], "-1") != 0)
 		{
 			return (ERROR);
 		}
@@ -69,8 +76,8 @@ int				initialize_stack_a(t_main *main, char **argv)
 		{
 			return (ERROR);
 		}
+		main->array[main->size] = num;
 		main->size++;
-		argv++;
 	}
 	return (SUCCESS);
 }

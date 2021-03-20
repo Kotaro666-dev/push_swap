@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:44:25 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/19 15:00:52 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/20 08:31:00 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void		free_memory(t_stack **stack_a, t_stack **stack_b);
 ** INITIALIZE.C
 */
 
-void		initialize_struct(t_main *main);
+int			initialize_struct(t_main *main, int argc);
 int			initialize_stack_a(t_main *main, char **argv);
 
 #endif
