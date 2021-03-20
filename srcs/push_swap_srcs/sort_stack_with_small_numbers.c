@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_stack_with_more_than_four_numbers.c           :+:      :+:    :+:   */
+/*   sort_stack_with_small_numbers.c                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 16:54:19 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/19 21:39:17 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/20 21:33:06 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ static int			is_target_right_position(t_main *main, int target)
 	}
 }
 
-void			sort_stack_with_more_than_four_numbers(t_main *main)
+void			sort_stack_with_small_numbers(t_main *main)
 {
 	int	position;
 	int	target;
