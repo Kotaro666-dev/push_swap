@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 12:39:57 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/16 15:29:07 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/20 08:41:25 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,6 @@ void				ft_lstiter(t_list *lst, void (*f)(void *));
 void				ft_swap(int *first, int *second);
 void				ft_bubblesort(int *array, int upto);
 int					ft_strcmp(const char *s1, const char *s2);
+void				ft_qsort(int *array, int first, int last);
 
 #endif
