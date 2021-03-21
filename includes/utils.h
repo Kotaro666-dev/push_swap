@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:44:25 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/21 14:45:18 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 19:29:16 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int			print_out_null_character(void);
 
 int			is_arg_numeric(char *arg);
 int			is_stack_empty(t_stack *stack);
+int			get_stack_size(t_stack *stack);
 int			is_stack_sorted(t_stack *stack);
 int			is_every_number_unique(t_stack *stack);
 

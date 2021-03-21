@@ -1,53 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_all_numbers_to_stack_b_utils.c                :+:      :+:    :+:   */
+/*   push_all_numbers_to_stack_b_utils_1.c              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 21:11:48 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/21 18:25:50 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 19:53:22 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
-
-void			update_main_members(t_main *main)
-{
-	main->border += main->diff;
-	if (main->border > main->size)
-	{
-		main->border = main->size;
-	}
-	main->max_number = main->array[main->border - 1];
-}
-
-void			set_main_members(t_main *main, int divider)
-{
-	main->border = main->size / divider;
-	main->diff = main->size / divider;
-	main->max_number = main->array[main->border - 1];
-}
-
-void			push_b_from_top(t_main *main, int step_from_head)
-{
-	while (step_from_head != 0)
-	{
-		rotate_a_stdout(main);
-		step_from_head--;
-	}
-	push_b_stdout(main);
-}
-
-void			push_b_from_tail(t_main *main, int step_from_tail)
-{
-	while (step_from_tail != 0)
-	{
-		reverse_rotate_a_stdout(main);
-		step_from_tail--;
-	}
-	push_b_stdout(main);
-}
 
 int			count_step_from_head(t_stack *stack, int max_number)
 {
@@ -101,10 +64,10 @@ int			count_step_from_tail(t_stack *stack, int max_number)
 
 int			is_minimum_number_on_head(t_stack *stack)
 {
-	int		top;
+	int		head_value;
 	t_stack	*head;
 
-	top = stack->value;
+	head_value = stack->value;
 	head = stack;
 	if (stack == NULL || stack->next == NULL)
 	{
@@ -113,33 +76,17 @@ int			is_minimum_number_on_head(t_stack *stack)
 	stack = stack->next;
 	while (stack->next != head)
 	{
-		if (top > stack->value)
+		if (head_value > stack->value)
 		{
 			return (FALSE);
 		}
 		stack = stack->next;
 	}
-	if (top > stack->value)
+	if (head_value > stack->value)
 	{
 		return (FALSE);
 	}
 	return (TRUE);
-}
-
-int			get_stack_size(t_stack *stack)
-{
-	int		size;
-	t_stack	*head;
-
-	size = 0;
-	head = stack;
-	while (stack->next != head)
-	{
-		size++;
-		stack = stack->next;
-	}
-	size++;
-	return (size);
 }
 
 int			find_minimum_position(t_stack *stack)

@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:00:14 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/21 18:33:35 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 20:02:10 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,28 +43,30 @@ int			is_one_three_two(t_main *main);
 int			is_two_three_one(t_main *main);
 
 /*
-** PUSH_ALL_NUMBERS_TO_STACK_B_UTILS.C
+** PUSH_ALL_NUMBERS_TO_STACK_B_UTILS_1.C
 */
 
-void		update_main_members(t_main *main);
-void		set_main_members(t_main *main, int divider);
-void		push_b_from_top(t_main *main, int step_from_head);
-void		push_b_from_tail(t_main *main, int step_from_tail);
 int			count_step_from_head(t_stack *stack, int max_number);
 int			count_step_from_tail(t_stack *stack, int max_number);
 int			is_minimum_number_on_head(t_stack *stack);
-int			get_stack_size(t_stack *stack);
 int			find_minimum_position(t_stack *stack);
 void		put_minimum_number_on_head(t_main *main);
+
+/*
+** PUSH_ALL_NUMBERS_TO_STACK_B_UTILS_1.C
+*/
+
+void		update_elements(t_main *main);
+void		initialize_elements(t_main *main, int divider);
+void		rotate_stack_and_push_b(t_main *main, int steps, int direction);
 
 /*
 ** PUSH_ALL_NUMBERS_TO_STACK_A_UTILS.C
 */
 
-int			count_step_from_head_to_max(t_stack *stack, int max_number);
-int			count_step_from_tail_to_max(t_stack *stack, int max_number);
-void		push_a_from_head(t_main *main, int step_from_head);
-void		push_a_from_tail(t_main *main, int step_from_head);
+int			count_step_from_head_to_max(t_main *main);
+int			count_step_from_tail_to_max(t_main *main);
+void		rotate_stack_and_push_a(t_main *main, int steps, int direction);
 
 /*
 ** IS_TARGET_IN_RIGHT_POSITION.C
