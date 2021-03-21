@@ -6,13 +6,13 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 14:40:33 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/19 20:42:39 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 14:55:22 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-int		is_arg_numeric(char *arg)
+int			is_arg_numeric(char *arg)
 {
 	int i;
 
@@ -32,7 +32,7 @@ int		is_arg_numeric(char *arg)
 	return (TRUE);
 }
 
-int		is_stack_empty(t_stack *stack)
+int			is_stack_empty(t_stack *stack)
 {
 	if (stack == NULL)
 	{
@@ -41,7 +41,7 @@ int		is_stack_empty(t_stack *stack)
 	return (FALSE);
 }
 
-int		is_stack_sorted(t_stack *stack)
+int			is_stack_sorted(t_stack *stack)
 {
 	t_stack *current;
 	t_stack *head;
