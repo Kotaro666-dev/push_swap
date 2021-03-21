@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 16:07:52 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/19 16:08:13 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 13:59:52 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ void		sort_stack_with_two_numbers(t_main *main)
 	{
 		return ;
 	}
-	swap_a(main);
+	swap_a_stdout(main);
 }

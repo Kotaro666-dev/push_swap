@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 16:54:19 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/20 21:33:06 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 14:09:36 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,13 +93,13 @@ void			sort_stack_with_small_numbers(t_main *main)
 
 	while (main->size > 3)
 	{
-		push_b(main);
+		push_b_stdout(main);
 		main->size--;
 	}
 	sort_stack_with_three_numbers(main);
 	while (!is_stack_empty(main->stack_b))
 	{
-		push_a(main);
+		push_a_stdout(main);
 		main->size++;
 		target = main->stack_a->value;
 		position = find_perfect_position(main, target);
@@ -109,30 +109,30 @@ void			sort_stack_with_small_numbers(t_main *main)
 		}
 		else if (position == main->size - 1)
 		{
-			rotate_a(main);
+			rotate_a_stdout(main);
 		}
 		else if (position < main->size / 2)
 		{
 			while (!is_target_right_position(main, target))
 			{
-				swap_a(main);
-				rotate_a(main);
+				swap_a_stdout(main);
+				rotate_a_stdout(main);
 			}
 			while (!is_stack_sorted(main->stack_a))
 			{
-				reverse_rotate_a(main);
+				reverse_rotate_a_stdout(main);
 			}
 		}
 		else
 		{
 			while (!is_target_right_position(main, target))
 			{
-				reverse_rotate_a(main);
-				swap_a(main);
+				reverse_rotate_a_stdout(main);
+				swap_a_stdout(main);
 			}
 			while (!is_stack_sorted(main->stack_a))
 			{
-				rotate_a(main);
+				rotate_a_stdout(main);
 			}
 		}
 	}

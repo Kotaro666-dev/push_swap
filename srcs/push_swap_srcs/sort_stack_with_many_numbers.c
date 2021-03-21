@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 21:09:52 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/20 21:37:47 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 14:01:33 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,19 @@ static void		push_all_numbers_stack_b(t_main *main, int divider)
 		{
 			while (step_from_top != 0)
 			{
-				rotate_a(main);
+				rotate_a_stdout(main);
 				step_from_top--;
 			}
-			push_b(main);
+			push_b_stdout(main);
 		}
 		else
 		{
 			while (step_from_tail != 0)
 			{
-				reverse_rotate_a(main);
+				reverse_rotate_a_stdout(main);
 				step_from_tail--;
 			}
-			push_b(main);
+			push_b_stdout(main);
 		}
 		put_minimum_number_on_top(main);
 	}
@@ -73,19 +73,19 @@ static void		push_all_numbers_stack_a(t_main *main)
 		{
 			while (step_from_top != 0)
 			{
-				rotate_b(main);
+				rotate_b_stdout(main);
 				step_from_top--;
 			}
-			push_a(main);
+			push_a_stdout(main);
 		}
 		else
 		{
 			while (step_from_tail != 0)
 			{
-				reverse_rotate_b(main);
+				reverse_rotate_b_stdout(main);
 				step_from_tail--;
 			}
-			push_a(main);
+			push_a_stdout(main);
 		}
 		main->size--;
 	}

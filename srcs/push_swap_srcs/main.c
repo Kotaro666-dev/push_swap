@@ -63,9 +63,9 @@ int			main(int argc, char *argv[])
 	}
 	sort_stack_by_size(&main);
 	/// DEBUG BEGINS
-	print_out_stack(main.stack_a, main.stack_b);
-	print_out_count(&main);
+	// print_out_stack(main.stack_a, main.stack_b);
+	// print_out_count(&main);
 	/// DEBUG ENDS
 	free_memory(&(main.stack_a), &(main.stack_b));
-	return (print_out_ok());
+	return (print_out_null_character());
 }

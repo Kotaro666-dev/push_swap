@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 21:11:48 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/20 21:27:42 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 14:01:48 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,7 +148,7 @@ void			put_minimum_number_on_top(t_main *main)
 	{
 		while (position != 0)
 		{
-			rotate_b(main);
+			rotate_b_stdout(main);
 			position--;
 		}
 	}
@@ -156,7 +156,7 @@ void			put_minimum_number_on_top(t_main *main)
 	{
 		while (position != 0)
 		{
-			reverse_rotate_b(main);
+			reverse_rotate_b_stdout(main);
 			position--;
 		}
 	}
