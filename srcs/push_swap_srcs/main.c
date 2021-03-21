@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -7,13 +6,13 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:04:09 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/20 08:58:33 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 20:16:39 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
 
-void		sort_stack_by_size(t_main *main)
+static void		sort_stack_by_size(t_main *main)
 {
 	if (main->size < 2)
 	{
@@ -41,7 +40,7 @@ void		sort_stack_by_size(t_main *main)
 	}
 }
 
-int			main(int argc, char *argv[])
+int				main(int argc, char *argv[])
 {
 	t_main main;
 
