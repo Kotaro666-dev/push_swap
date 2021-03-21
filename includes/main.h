@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:00:14 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/21 17:55:21 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 18:33:35 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,38 @@ void		sort_stack_with_small_numbers(t_main *main);
 void		sort_stack_with_many_numbers(t_main *main, int divider);
 
 /*
+** THREE_NUMBERS_PATTERNS.C
+*/
+
+int			is_two_one_three(t_main *main);
+int			is_three_two_one(t_main *main);
+int			is_three_one_two(t_main *main);
+int			is_one_three_two(t_main *main);
+int			is_two_three_one(t_main *main);
+
+/*
 ** PUSH_ALL_NUMBERS_TO_STACK_B_UTILS.C
 */
 
-int			count_step_from_top(t_stack *stack, int maximum);
-int			count_step_from_tail(t_stack *stack, int maximum);
-int			is_minimum_number_on_top(t_stack *stack);
+void		update_main_members(t_main *main);
+void		set_main_members(t_main *main, int divider);
+void		push_b_from_top(t_main *main, int step_from_head);
+void		push_b_from_tail(t_main *main, int step_from_tail);
+int			count_step_from_head(t_stack *stack, int max_number);
+int			count_step_from_tail(t_stack *stack, int max_number);
+int			is_minimum_number_on_head(t_stack *stack);
 int			get_stack_size(t_stack *stack);
 int			find_minimum_position(t_stack *stack);
-void		put_minimum_number_on_top(t_main *main);
+void		put_minimum_number_on_head(t_main *main);
 
 /*
 ** PUSH_ALL_NUMBERS_TO_STACK_A_UTILS.C
 */
 
-int			count_step_to_maximum_from_head(t_stack *stack, int maximum);
-int			count_step_to_maximum_from_tail(t_stack *stack, int maximum);
+int			count_step_from_head_to_max(t_stack *stack, int max_number);
+int			count_step_from_tail_to_max(t_stack *stack, int max_number);
+void		push_a_from_head(t_main *main, int step_from_head);
+void		push_a_from_tail(t_main *main, int step_from_head);
 
 /*
 ** IS_TARGET_IN_RIGHT_POSITION.C

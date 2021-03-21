@@ -6,13 +6,13 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 21:11:24 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/20 21:26:40 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 18:33:09 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
 
-int			count_step_to_maximum_from_head(t_stack *stack, int maximum)
+int			count_step_from_head_to_max(t_stack *stack, int max_number)
 {
 	t_stack	*current;
 	t_stack	*head;
@@ -23,21 +23,21 @@ int			count_step_to_maximum_from_head(t_stack *stack, int maximum)
 	step = 0;
 	while (current->next != head)
 	{
-		if (current->value == maximum)
+		if (current->value == max_number)
 		{
 			return (step);
 		}
 		current = current->next;
 		step++;
 	}
-	if (current->value == maximum)
+	if (current->value == max_number)
 	{
 		return (step);
 	}
 	return (NOT_FOUND);
 }
 
-int			count_step_to_maximum_from_tail(t_stack *stack, int maximum)
+int			count_step_from_tail_to_max(t_stack *stack, int max_number)
 {
 	t_stack	*current;
 	t_stack	*head;
@@ -48,16 +48,36 @@ int			count_step_to_maximum_from_tail(t_stack *stack, int maximum)
 	step = 0;
 	while (current->prev != head)
 	{
-		if (current->value == maximum)
+		if (current->value == max_number)
 		{
 			return (step);
 		}
 		current = current->prev;
 		step++;
 	}
-	if (current->value == maximum)
+	if (current->value == max_number)
 	{
 		return (step);
 	}
 	return (NOT_FOUND);
+}
+
+void		push_a_from_head(t_main *main, int step_from_head)
+{
+	while (step_from_head != 0)
+	{
+		rotate_b_stdout(main);
+		step_from_head--;
+	}
+	push_a_stdout(main);
+}
+
+void		push_a_from_tail(t_main *main, int step_from_tail)
+{
+	while (step_from_tail != 0)
+	{
+		reverse_rotate_b_stdout(main);
+		step_from_tail--;
+	}
+	push_a_stdout(main);
 }

@@ -6,13 +6,50 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 21:11:48 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/21 14:01:48 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 18:25:50 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
 
-int			count_step_from_top(t_stack *stack, int maximum)
+void			update_main_members(t_main *main)
+{
+	main->border += main->diff;
+	if (main->border > main->size)
+	{
+		main->border = main->size;
+	}
+	main->max_number = main->array[main->border - 1];
+}
+
+void			set_main_members(t_main *main, int divider)
+{
+	main->border = main->size / divider;
+	main->diff = main->size / divider;
+	main->max_number = main->array[main->border - 1];
+}
+
+void			push_b_from_top(t_main *main, int step_from_head)
+{
+	while (step_from_head != 0)
+	{
+		rotate_a_stdout(main);
+		step_from_head--;
+	}
+	push_b_stdout(main);
+}
+
+void			push_b_from_tail(t_main *main, int step_from_tail)
+{
+	while (step_from_tail != 0)
+	{
+		reverse_rotate_a_stdout(main);
+		step_from_tail--;
+	}
+	push_b_stdout(main);
+}
+
+int			count_step_from_head(t_stack *stack, int max_number)
 {
 	t_stack	*current;
 	t_stack	*head;
@@ -23,21 +60,21 @@ int			count_step_from_top(t_stack *stack, int maximum)
 	step = 0;
 	while (current->next != head)
 	{
-		if (current->value <= maximum)
+		if (current->value <= max_number)
 		{
 			return (step);
 		}
 		current = current->next;
 		step++;
 	}
-	if (current->value <= maximum)
+	if (current->value <= max_number)
 	{
 		return (step);
 	}
 	return (NOT_FOUND);
 }
 
-int			count_step_from_tail(t_stack *stack, int maximum)
+int			count_step_from_tail(t_stack *stack, int max_number)
 {
 	t_stack	*current;
 	t_stack	*head;
@@ -48,21 +85,21 @@ int			count_step_from_tail(t_stack *stack, int maximum)
 	step = 0;
 	while (current->prev != head)
 	{
-		if (current->value <= maximum)
+		if (current->value <= max_number)
 		{
 			return (step);
 		}
 		current = current->prev;
 		step++;
 	}
-	if (current->value <= maximum)
+	if (current->value <= max_number)
 	{
 		return (step);
 	}
 	return (NOT_FOUND);
 }
 
-int			is_minimum_number_on_top(t_stack *stack)
+int			is_minimum_number_on_head(t_stack *stack)
 {
 	int		top;
 	t_stack	*head;
@@ -133,12 +170,12 @@ int			find_minimum_position(t_stack *stack)
 	return (position);
 }
 
-void			put_minimum_number_on_top(t_main *main)
+void			put_minimum_number_on_head(t_main *main)
 {
 	int	position;
 	int	size;
 
-	if (is_minimum_number_on_top(main->stack_b))
+	if (is_minimum_number_on_head(main->stack_b))
 	{
 		return ;
 	}
