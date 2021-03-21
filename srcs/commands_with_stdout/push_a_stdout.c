@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:26 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/21 13:50:46 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 14:54:08 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,7 @@ void			push_a_stdout(t_main *main)
 	stack_a = &(main->stack_a);
 	stack_b = &(main->stack_b);
 	if (*stack_b == NULL)
-	{
 		return ;
-	}
 	head_stack_b = *stack_b;
 	if (head_stack_b == (*stack_b)->next)
 		*stack_b = NULL;
