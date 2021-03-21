@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:26 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/21 13:27:38 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 13:39:02 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void			push_a(t_main *main)
 	else
 	{
 		insert_node_at_end(&(stack_a), head_stack_b);
+		*stack_a = (*stack_a)->prev;
 	}
 	main->count++;
 }
