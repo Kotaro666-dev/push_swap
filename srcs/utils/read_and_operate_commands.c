@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 07:43:33 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/19 20:16:19 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 14:25:06 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ int		read_and_operate_commands(t_main *main)
 	char	*line;
 	char	*formatted_line;
 
-	print_out_stack(main->stack_a, main->stack_b);
 	while (TRUE)
 	{
 		return_value = get_next_line(STDIN_FILENO, &line);
@@ -63,7 +62,6 @@ int		read_and_operate_commands(t_main *main)
 			return (ERROR);
 		if (operate_commands(formatted_line, main) == ERROR)
 			return (ERROR);
-		print_out_stack(main->stack_a, main->stack_b);
 		free(line);
 		free(formatted_line);
 	}

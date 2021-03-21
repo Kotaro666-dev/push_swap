@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:02:55 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/20 08:43:20 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 14:23:58 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		main(int argc, char *argv[])
 	{
 		return (print_out_ko());
 	}
-	print_out_count(&main);
+	// print_out_count(&main);
 	free_memory(&(main.stack_a), &(main.stack_b));
 	return (print_out_ok());
 }
