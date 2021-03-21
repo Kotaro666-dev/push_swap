@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:44:25 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/20 08:31:00 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 14:26:22 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@
 int			print_out_ok(void);
 int			print_out_ko(void);
 int			print_out_error(void);
+int			print_out_null_character(void);
 
 /*
 ** UTILITIES.C

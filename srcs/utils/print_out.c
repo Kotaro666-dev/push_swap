@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:43:59 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/16 17:26:59 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 14:29:29 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,10 @@ int			print_out_error(void)
 {
 	ft_putendl_fd("ERROR", STDERR_FILENO);
 	return (ERROR);
+}
+
+int			print_out_null_character(void)
+{
+	ft_putstr_fd("\0", STDOUT_FILENO);
+	return (SUCCESS);
 }
