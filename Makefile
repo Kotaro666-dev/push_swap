@@ -6,7 +6,7 @@
 #    By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/11 08:08:33 by kkamashi          #+#    #+#              #
-#    Updated: 2021/03/16 17:30:24 by kkamashi         ###   ########.fr        #
+#    Updated: 2021/03/21 14:04:47 by kkamashi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,7 @@ INCLUDE = -I./includes/ \
 SRCS = ${shell find ./srcs/utils -type f -name "*.c"}
 SRCS += ${shell find ./srcs/debug -type f -name "*.c"}
 SRCS += ${shell find ./srcs/commands -type f -name "*.c"}
+SRCS += ${shell find ./srcs/commands_with_stdout -type f -name "*.c"}
 SRCS += ${shell find ./libs/get_next_line -type f -name "*.c"}
 SRCS_CHECKER = ${shell find ./srcs/checker_srcs -type f -name "*.c"}
 SRCS_PUSH_SWAP = ${shell find ./srcs/push_swap_srcs -type f -name "*.c"}
@@ -52,6 +53,7 @@ $(NAME): $(OBJS) $(OBJS_CHECKER) $(OBJS_PUSH_SWAP)
 
 clean:
 	$(RM) $(OBJS) $(OBJS_CHECKER) $(OBJS_PUSH_SWAP) $(DEPS_CHECKER) $(DEPS_PUSH_SWAP)
+	find ./ -name '*.d' | xargs rm
 
 fclean: clean
 	$(MAKE) fclean -C ./libs/libft
