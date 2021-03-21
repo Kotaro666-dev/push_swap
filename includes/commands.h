@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:22:16 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/21 13:56:55 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 14:45:52 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,5 @@ void	swap_b_stdout(t_main *main);
 void	remove_head_node(t_stack ***stack, t_stack *node);
 void	insert_node_at_front(t_stack ***stack, t_stack *node);
 void	insert_node_at_end(t_stack ***stack, t_stack *node);
-
 
 #endif

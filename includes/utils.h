@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:44:25 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/21 14:26:22 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 14:45:18 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ int			is_every_number_unique(t_stack *stack);
 */
 
 int			read_and_operate_commands(t_main *main);
-
 
 /*
 ** FREE_MEMORY.C
