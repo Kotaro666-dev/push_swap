@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/22 16:42:20 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/12 15:24:12 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 14:48:08 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int		is_result_overflow(long long int num, int is_minus)
 {
 	if (is_minus)
 	{
-		if (INT_MAX < num -1)
+		if (INT_MAX < num - 1)
 		{
 			return (TRUE);
 		}
@@ -63,5 +63,5 @@ int				ft_atoi(const char *str)
 			return (-1);
 		str++;
 	}
-	return ((int)(result * (is_minus ? -1: 1)));
+	return ((int)(result * (is_minus ? -1 : 1)));
 }
