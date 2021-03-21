@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 22:25:58 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/19 19:46:06 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 20:15:59 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	free_stack(t_stack **stack)
 		free(current);
 		current = next;
 	}
+	free(current);
+	current = NULL;
 }
 
 void	free_memory(t_stack **stack_a, t_stack **stack_b)
