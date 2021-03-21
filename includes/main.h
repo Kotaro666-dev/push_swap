@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:00:14 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/20 21:32:36 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 17:55:21 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,14 @@ void		put_minimum_number_on_top(t_main *main);
 
 int			count_step_to_maximum_from_head(t_stack *stack, int maximum);
 int			count_step_to_maximum_from_tail(t_stack *stack, int maximum);
+
+/*
+** IS_TARGET_IN_RIGHT_POSITION.C
+*/
+
+int			is_target_suitable_in_head(t_stack *current);
+int			is_target_suitable_in_tail(t_stack *current);
+int			is_target_suitable_in_middle(t_stack *current);
+int			is_target_in_right_position(t_main *main, int target);
 
 #endif

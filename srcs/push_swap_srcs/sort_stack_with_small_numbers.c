@@ -6,13 +6,22 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 16:54:19 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/21 14:09:36 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 17:56:03 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
 
-static int			find_perfect_position(t_main *main, int target)
+static void		make_stack_b_with_three_numbers(t_main *main)
+{
+	while (main->size > 3)
+	{
+		push_b_stdout(main);
+		main->size--;
+	}
+}
+
+static int		find_perfect_position(t_main *main, int target)
 {
 	t_stack	*current;
 	t_stack	*head;
@@ -33,56 +42,32 @@ static int			find_perfect_position(t_main *main, int target)
 	return (position);
 }
 
-static int			is_target_right_position(t_main *main, int target)
+static void		sort_stack_by_position(t_main *main, int position, int target)
 {
-	t_stack *current;
-	t_stack *head;
-
-	current = main->stack_a;
-	head = main->stack_a;
-	while (current->next != head)
+	if (position == 0)
+		;
+	else if (position == main->size - 1)
+		rotate_a_stdout(main);
+	else if (position <= (main->size - 1) / 2)
 	{
-		if (current->value == target)
+		while (!is_target_in_right_position(main, target))
 		{
-			break ;
+			swap_a_stdout(main);
+			if (!is_stack_sorted(main->stack_a))
+				rotate_a_stdout(main);
 		}
-		current = current->next;
-	}
-	if (current == head)
-	{
-		if (current->value > current->prev->value &&
-			current->value < current->next->value)
-		{
-			return (TRUE);
-		}
-		else
-		{
-			return (FALSE);
-		}
-	}
-	else if (current->next == head)
-	{
-		if (current->value > current->prev->value &&
-			current->value > current->next->value)
-		{
-			return (TRUE);
-		}
-		else
-		{
-			return (FALSE);
-		}
+		while (!is_stack_sorted(main->stack_a))
+			reverse_rotate_a_stdout(main);
 	}
 	else
 	{
-		if (current->value > current->prev->value &&
-			current->value < current->next->value)
+		while (!is_target_in_right_position(main, target))
 		{
-			return (TRUE);
+			reverse_rotate_a_stdout(main);
+			swap_a_stdout(main);
 		}
-		else
-		{
-			return (FALSE);
-		}
+		while (!is_stack_sorted(main->stack_a))
+			rotate_a_stdout(main);
 	}
 }
 
@@ -91,11 +76,7 @@ void			sort_stack_with_small_numbers(t_main *main)
 	int	position;
 	int	target;
 
-	while (main->size > 3)
-	{
-		push_b_stdout(main);
-		main->size--;
-	}
+	make_stack_b_with_three_numbers(main);
 	sort_stack_with_three_numbers(main);
 	while (!is_stack_empty(main->stack_b))
 	{
@@ -103,37 +84,6 @@ void			sort_stack_with_small_numbers(t_main *main)
 		main->size++;
 		target = main->stack_a->value;
 		position = find_perfect_position(main, target);
-		if (position == 0)
-		{
-			continue;
-		}
-		else if (position == main->size - 1)
-		{
-			rotate_a_stdout(main);
-		}
-		else if (position < main->size / 2)
-		{
-			while (!is_target_right_position(main, target))
-			{
-				swap_a_stdout(main);
-				rotate_a_stdout(main);
-			}
-			while (!is_stack_sorted(main->stack_a))
-			{
-				reverse_rotate_a_stdout(main);
-			}
-		}
-		else
-		{
-			while (!is_target_right_position(main, target))
-			{
-				reverse_rotate_a_stdout(main);
-				swap_a_stdout(main);
-			}
-			while (!is_stack_sorted(main->stack_a))
-			{
-				rotate_a_stdout(main);
-			}
-		}
+		sort_stack_by_position(main, position, target);
 	}
 }
