@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:22:16 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/19 14:02:19 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 13:16:30 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,13 @@ void	rotate_a_and_b(t_main *main);
 void	reverse_rotate_a(t_main *main);
 void	reverse_rotate_b(t_main *main);
 void	reverse_rotate_a_and_b(t_main *main);
+
+/*
+** PUSH_UTILS.C
+*/
+
+void		remove_head_node(t_stack ***stack, t_stack *node);
+void		insert_node_at_front(t_stack ***stack, t_stack *node);
+void		insert_node_at_end(t_stack ***stack, t_stack *node);
 
 #endif

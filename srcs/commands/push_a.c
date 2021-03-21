@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:26 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/19 20:41:18 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 13:27:38 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 #include "commands.h"
 
-void	push_a(t_main *main)
+void			push_a(t_main *main)
 {
 	t_stack **stack_a;
 	t_stack **stack_b;
@@ -32,28 +32,16 @@ void	push_a(t_main *main)
 	}
 	head_stack_b = *stack_b;
 	if (head_stack_b == (*stack_b)->next)
-	{
 		*stack_b = NULL;
-	}
 	else
-	{
-		*stack_b = head_stack_b->next;
-		(*stack_b)->prev->prev->next = *stack_b;
-		(*stack_b)->prev = (*stack_b)->prev->prev;
-	}
+		remove_head_node(&(stack_b), head_stack_b);
 	if (*stack_a == NULL)
 	{
-		*stack_a = head_stack_b;
-		head_stack_b->prev = head_stack_b;
-		head_stack_b->next = head_stack_b;
+		insert_node_at_front(&(stack_a), head_stack_b);
 	}
 	else
 	{
-		head_stack_b->next = *stack_a;
-		head_stack_b->prev = (*stack_a)->prev;
-		(*stack_a)->prev->next = head_stack_b;
-		(*stack_a)->prev = head_stack_b;
-		*stack_a = (*stack_a)->prev;
+		insert_node_at_end(&(stack_a), head_stack_b);
 	}
 	main->count++;
 }

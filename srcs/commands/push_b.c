@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:30 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/19 20:41:24 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 13:27:54 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,28 +32,16 @@ void	push_b(t_main *main)
 	}
 	head_stack_a = *stack_a;
 	if (head_stack_a == (*stack_a)->next)
-	{
 		*stack_a = NULL;
-	}
 	else
-	{
-		*stack_a = head_stack_a->next;
-		(*stack_a)->prev->prev->next = *stack_a;
-		(*stack_a)->prev = (*stack_a)->prev->prev;
-	}
+		remove_head_node(&(stack_a), head_stack_a);
 	if (*stack_b == NULL)
 	{
-		*stack_b = head_stack_a;
-		head_stack_a->prev = head_stack_a;
-		head_stack_a->next = head_stack_a;
+		insert_node_at_front(&(stack_b), head_stack_a);
 	}
 	else
 	{
-		head_stack_a->next = *stack_b;
-		head_stack_a->prev = (*stack_b)->prev;
-		(*stack_b)->prev->next = head_stack_a;
-		(*stack_b)->prev = head_stack_a;
-		*stack_b = (*stack_b)->prev;
+		insert_node_at_end(&(stack_b), head_stack_a);
 	}
 	main->count++;
 }
