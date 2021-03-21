@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 22:28:38 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/20 08:48:40 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 13:41:21 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,11 @@ static int		store_value_in_stack_a(t_main *main, int num)
 	new->value = num;
 	if (*stack_a == NULL)
 	{
-		*stack_a = new;
-		new->prev = new;
-		new->next = new;
+		insert_node_at_front(&(stack_a), new);
 	}
 	else
 	{
-		new->next = *stack_a;
-		new->prev = (*stack_a)->prev;
-		(*stack_a)->prev->next = new;
-		(*stack_a)->prev = new;
+		insert_node_at_end(&(stack_a), new);
 	}
 	return (SUCCESS);
 }

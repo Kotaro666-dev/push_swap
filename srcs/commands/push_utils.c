@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 13:15:19 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/21 13:15:51 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/21 13:40:53 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,4 @@ void		insert_node_at_end(t_stack ***stack, t_stack *node)
 	node->prev = (**stack)->prev;
 	(**stack)->prev->next = node;
 	(**stack)->prev = node;
-	**stack = (**stack)->prev;
 }
