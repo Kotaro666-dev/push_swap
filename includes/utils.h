@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:44:25 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/21 19:29:16 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/23 11:59:33 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,12 @@ void		free_memory(t_stack **stack_a, t_stack **stack_b);
 
 int			initialize_struct(t_main *main, int argc);
 int			initialize_stack_a(t_main *main, char **argv);
+
+/*
+** COUNT_STEP.C
+*/
+
+int				count_step_from_head_to_target(t_main *main, int target);
+int				count_step_from_tail_to_target(t_main *main, int target);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 16:54:19 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/21 17:56:03 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/23 12:02:23 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,39 @@ static void		sort_stack_by_position(t_main *main, int position, int target)
 	}
 }
 
+void			push_max_and_min_number_to_stack_b(t_main *main)
+{
+	int	steps_from_head;
+	int	steps_from_tail;
+
+	steps_from_head = count_step_from_head_to_target(main, main->maximum);
+	steps_from_tail = count_step_from_tail_to_target(main, main->maximum);
+	if (steps_from_head < steps_from_tail)
+	{
+		rotate_stack_and_push_b(main, steps_from_head, FROM_HEAD);
+	}
+	else
+	{
+		rotate_stack_and_push_b(main, steps_from_tail, FROM_TAIL);
+	}
+	steps_from_head = count_step_from_head_to_target(main, main->minimum);
+	steps_from_tail = count_step_from_tail_to_target(main, main->minimum);
+	if (steps_from_head < steps_from_tail)
+	{
+		rotate_stack_and_push_b(main, steps_from_head, FROM_HEAD);
+	}
+	else
+	{
+		rotate_stack_and_push_b(main, steps_from_tail, FROM_TAIL);
+	}
+}
+
 void			sort_stack_with_small_numbers(t_main *main)
 {
-	int	position;
-	int	target;
+	int target;
+	int position;
 
+	push_max_and_min_number_to_stack_b(main);
 	make_stack_b_with_three_numbers(main);
 	sort_stack_with_three_numbers(main);
 	while (!is_stack_empty(main->stack_b))
@@ -83,7 +111,18 @@ void			sort_stack_with_small_numbers(t_main *main)
 		push_a_stdout(main);
 		main->size++;
 		target = main->stack_a->value;
-		position = find_perfect_position(main, target);
-		sort_stack_by_position(main, position, target);
+		if (target == main->minimum)
+		{
+			;
+		}
+		else if (target == main->maximum)
+		{
+			rotate_a_stdout(main);
+		}
+		else
+		{
+			position = find_perfect_position(main, target);
+			sort_stack_by_position(main, position, target);
+		}
 	}
 }
