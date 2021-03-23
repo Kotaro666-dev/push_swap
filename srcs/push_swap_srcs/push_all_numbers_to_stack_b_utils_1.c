@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 21:11:48 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/21 19:53:22 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/23 12:18:24 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,11 +113,12 @@ int			find_minimum_position(t_stack *stack)
 	if (stack->value < minimum)
 	{
 		position = index;
+		minimum = stack->value;
 	}
 	return (position);
 }
 
-void			put_minimum_number_on_head(t_main *main)
+void		put_minimum_number_on_head(t_main *main)
 {
 	int	position;
 	int	size;
