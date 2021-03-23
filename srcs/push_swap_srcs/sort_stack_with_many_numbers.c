@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/20 21:09:52 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/21 20:01:56 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/23 12:58:02 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void		push_all_numbers_stack_a(t_main *main)
 
 	while (!is_stack_empty(main->stack_b))
 	{
-		main->max_number = main->array[main->size - 1];
+		main->max_number = main->array[main->len_array - 1];
 		steps_from_head = count_step_from_head_to_max(main);
 		steps_from_tail = count_step_from_tail_to_max(main);
 		if (steps_from_head < steps_from_tail)
@@ -56,13 +56,13 @@ static void		push_all_numbers_stack_a(t_main *main)
 		{
 			rotate_stack_and_push_a(main, steps_from_tail, FROM_TAIL);
 		}
-		main->size--;
+		main->len_array--;
 	}
 }
 
 void			sort_stack_with_many_numbers(t_main *main, int divider)
 {
-	ft_qsort(main->array, 0, main->size - 1);
+	ft_qsort(main->array, 0, main->len_array - 1);
 	push_all_numbers_stack_b(main, divider);
 	push_all_numbers_stack_a(main);
 }

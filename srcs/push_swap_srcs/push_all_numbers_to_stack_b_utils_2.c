@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 19:53:06 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/23 11:46:22 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/23 12:58:23 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 void			update_elements(t_main *main)
 {
 	main->border += main->diff;
-	if (main->border > main->size)
+	if (main->border > main->len_array)
 	{
-		main->border = main->size;
+		main->border = main->len_array;
 	}
 	main->max_number = main->array[main->border - 1];
 }
 
 void			initialize_elements(t_main *main, int divider)
 {
-	main->border = main->size / divider;
-	main->diff = main->size / divider;
+	main->border = main->len_array / divider;
+	main->diff = main->len_array / divider;
 	main->max_number = main->array[main->border - 1];
 }
 
