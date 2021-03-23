@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:04:09 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/21 20:16:39 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/23 14:13:28 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void		sort_stack_by_size(t_main *main)
 	{
 		sort_stack_with_three_numbers(main);
 	}
-	else if (main->size <= 7)
+	else if (main->size <= 10)
 	{
 		sort_stack_with_small_numbers(main);
 	}
@@ -54,17 +54,17 @@ int				main(int argc, char *argv[])
 	}
 	if (initialize_stack_a(&main, argv + 1) == ERROR)
 	{
-		return (print_out_error());
+		return (print_out_error(&main));
 	}
 	if (!is_every_number_unique(main.stack_a))
 	{
-		return (print_out_error());
+		return (print_out_error(&main));
 	}
 	sort_stack_by_size(&main);
 	/// DEBUG BEGINS
 	// print_out_stack(main.stack_a, main.stack_b);
 	// print_out_count(&main);
 	/// DEBUG ENDS
-	free_memory(&(main.stack_a), &(main.stack_b));
+	dispose_memory(&main);
 	return (print_out_null_character());
 }

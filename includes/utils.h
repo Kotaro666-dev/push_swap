@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:44:25 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/23 11:59:33 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/23 14:04:52 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@
 */
 
 int			print_out_ok(void);
-int			print_out_ko(void);
-int			print_out_error(void);
+int			print_out_ko(t_main *main);
+int			print_out_error(t_main *main);
 int			print_out_null_character(void);
 
 /*
@@ -52,8 +52,7 @@ int			read_and_operate_commands(t_main *main);
 ** FREE_MEMORY.C
 */
 
-void		free_stack(t_stack **stack);
-void		free_memory(t_stack **stack_a, t_stack **stack_b);
+void		dispose_memory(t_main *main);
 
 /*
 ** INITIALIZE.C
@@ -66,7 +65,7 @@ int			initialize_stack_a(t_main *main, char **argv);
 ** COUNT_STEP.C
 */
 
-int				count_step_from_head_to_target(t_main *main, int target);
-int				count_step_from_tail_to_target(t_main *main, int target);
+int			count_step_from_head_to_target(t_main *main, int target);
+int			count_step_from_tail_to_target(t_main *main, int target);
 
 #endif
