@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:43:59 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/23 14:06:06 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/23 20:06:17 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ int			print_out_ko(t_main *main)
 int			print_out_error(t_main *main)
 {
 	dispose_memory(main);
-	ft_putendl_fd("ERROR", STDERR_FILENO);
-	system("leaks push_swap");
+	ft_putendl_fd("Error", STDERR_FILENO);
 	return (ERROR);
 }
 
