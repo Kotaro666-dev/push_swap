@@ -1,17 +1,27 @@
-#　how to test
+#　How to test
 
 ```
+bash
 ARG=`python test/generate_random_numbers.py 100`; ./push_swap $ARG
 ```
 
-# how to count step
+# How to count step
 
 ```
-ARG=`python test/generate_random_numbers.py 100`; ./push_swap $ARG | wc -l
+bash
+ARG=`python test/generate_random_numbers.py 100`; ./push_swap $ARG | wc -l | tr -d ' '
 ```
 
-# how to check if stack is successfully sorted
+# How to check if stack is successfully sorted
 
 ```
+bash
 ARG=`python test/generate_random_numbers.py 100`; ./push_swap $ARG | ./checker $ARG
+```
+
+# start test.sh
+
+```
+cd test
+sh test.sh
 ```
