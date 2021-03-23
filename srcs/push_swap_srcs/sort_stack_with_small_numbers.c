@@ -6,13 +6,13 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 16:54:19 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/23 12:02:23 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/23 13:31:44 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "main.h"
 
-static void		make_stack_b_with_three_numbers(t_main *main)
+static void		make_stack_a_with_three_numbers(t_main *main)
 {
 	while (main->size > 3)
 	{
@@ -104,7 +104,7 @@ void			sort_stack_with_small_numbers(t_main *main)
 	int position;
 
 	push_max_and_min_number_to_stack_b(main);
-	make_stack_b_with_three_numbers(main);
+	make_stack_a_with_three_numbers(main);
 	sort_stack_with_three_numbers(main);
 	while (!is_stack_empty(main->stack_b))
 	{
