@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 22:28:38 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/21 13:41:21 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/23 11:38:44 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int				initialize_struct(t_main *main, int argc)
 	main->top = 0;
 	main->middle = 0;
 	main->bottom = 0;
+	main->maximum = INT_MIN;
+	main->minimum = INT_MAX;
 	return (SUCCESS);
 }
 
@@ -52,6 +54,18 @@ static int		store_value_in_stack_a(t_main *main, int num)
 	return (SUCCESS);
 }
 
+static void		store_max_and_min_value(t_main *main, int num)
+{
+	if (main->maximum < num)
+	{
+		main->maximum = num;
+	}
+	if (main->minimum > num)
+	{
+		main->minimum = num;
+	}
+}
+
 int				initialize_stack_a(t_main *main, char **argv)
 {
 	int	num;
@@ -71,6 +85,7 @@ int				initialize_stack_a(t_main *main, char **argv)
 		{
 			return (ERROR);
 		}
+		store_max_and_min_value(main, num);
 		main->array[main->size] = num;
 		main->size++;
 	}

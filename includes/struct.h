@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 14:58:17 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/21 18:12:11 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/23 11:37:44 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ typedef struct			s_main
 	int					border;
 	int					diff;
 	int					max_number;
+	int					maximum;
+	int					minimum;
 }						t_main;
 
 #endif
