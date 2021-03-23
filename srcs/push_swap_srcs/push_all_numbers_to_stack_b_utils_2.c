@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 19:53:06 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/21 19:53:24 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/23 11:46:22 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,5 @@ void			rotate_stack_and_push_b(t_main *main, int steps, int direction)
 		steps--;
 	}
 	push_b_stdout(main);
+	main->size--;
 }
