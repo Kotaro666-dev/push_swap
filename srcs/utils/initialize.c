@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 22:28:38 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/23 11:38:44 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/23 12:47:20 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int				initialize_struct(t_main *main, int argc)
 	{
 		return (MALLOC_ERROR);
 	}
+	main->len_array = 0;
 	main->size = 0;
 	main->count = 0;
 	main->top = 0;
@@ -89,5 +90,6 @@ int				initialize_stack_a(t_main *main, char **argv)
 		main->array[main->size] = num;
 		main->size++;
 	}
+	main->len_array = main->size;
 	return (SUCCESS);
 }
