@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 14:44:50 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/21 14:42:52 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/26 16:29:40 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ void	print_out_stack(t_stack *stack_a, t_stack *stack_b)
 	current_b = stack_b;
 	head_a = stack_a;
 	head_b = stack_b;
+	printf("\e[1;1H\e[2J");
+	usleep(0.15 * 1000000);
 	printf("_  _\n");
 	while (current_a || current_b)
 	{
