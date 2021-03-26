@@ -65,7 +65,7 @@ TOTAL=0
 TIMES=3
 for i in `seq $TIMES`
 do
-run_test 'python generate_random_numbers.py 3'
+run_test 'python3 generate_random_numbers.py 3'
 done
 AVERAGE_THREE=$(( $TOTAL/$TIMES ))
 
@@ -75,7 +75,7 @@ NG=0
 TIMES=150
 for i in `seq $TIMES`
 do
-run_test_for_5_numbers 'python generate_random_numbers.py 5'
+run_test_for_5_numbers 'python3 generate_random_numbers.py 5'
 done
 AVERAGE_FIVE=$(( $TOTAL/$TIMES ))
 
@@ -84,7 +84,7 @@ TOTAL=0
 TIMES=200
 for i in `seq $TIMES`
 do
-run_test 'python generate_random_numbers.py 7'
+run_test 'python3 generate_random_numbers.py 7'
 done
 AVERAGE_SEVEN=$(( $TOTAL/$TIMES ))
 
@@ -93,7 +93,7 @@ TOTAL=0
 TIMES=200
 for i in `seq $TIMES`
 do
-run_test 'python generate_random_numbers.py 100'
+run_test 'python3 generate_random_numbers.py 100'
 done
 AVERAGE_HUNDRED=$(( $TOTAL/$TIMES ))
 
@@ -102,7 +102,7 @@ TOTAL=0
 TIMES=200
 for i in `seq $TIMES`
 do
-run_test 'python generate_random_numbers.py 500'
+run_test 'python3 generate_random_numbers.py 500'
 done
 AVERAGE_FIVE_HUNDRED=$(( $TOTAL/$TIMES ))
 
