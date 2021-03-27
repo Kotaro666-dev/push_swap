@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:04:09 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/24 06:49:40 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/27 13:32:24 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,10 @@ int				main(int argc, char *argv[])
 	{
 		return (print_out_error(&main));
 	}
+	if (is_stack_sorted(main.stack_a))
+	{
+		return (print_out_null_character(&main));
+	}
 	sort_stack_by_size(&main);
-	dispose_memory(&main);
-	return (print_out_null_character());
+	return (print_out_null_character(&main));
 }
