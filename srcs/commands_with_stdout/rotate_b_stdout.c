@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:36 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/21 13:52:50 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/27 14:34:50 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,5 @@ void	rotate_b_stdout(t_main *main)
 		return ;
 	}
 	*stack_b = (*stack_b)->next;
-	main->count++;
 	ft_putendl_fd("rb", STDOUT_FILENO);
 }

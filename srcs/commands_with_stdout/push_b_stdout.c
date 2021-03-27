@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:30 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/21 14:54:02 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/27 14:34:38 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,5 @@ void	push_b_stdout(t_main *main)
 		insert_node_at_end(&(stack_b), head_stack_a);
 		*stack_b = (*stack_b)->prev;
 	}
-	main->count++;
 	ft_putendl_fd("pb", STDOUT_FILENO);
 }

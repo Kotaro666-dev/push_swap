@@ -6,7 +6,7 @@
 #    By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/11 08:08:33 by kkamashi          #+#    #+#              #
-#    Updated: 2021/03/26 16:31:56 by kkamashi         ###   ########.fr        #
+#    Updated: 2021/03/27 13:36:10 by kkamashi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ INCLUDE = -I./includes/ \
 			-I./libs/get_next_line/
 
 SRCS = ${shell find ./srcs/utils -type f -name "*.c"}
-# SRCS += ${shell find ./debug -type f -name "*.c"}
+SRCS += ${shell find ./debug -type f -name "*.c"}
 SRCS += ${shell find ./srcs/commands -type f -name "*.c"}
 SRCS += ${shell find ./srcs/commands_with_stdout -type f -name "*.c"}
 SRCS += ${shell find ./libs/get_next_line -type f -name "*.c"}

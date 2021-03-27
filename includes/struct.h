@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 14:58:17 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/23 12:46:23 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/27 14:35:06 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ typedef struct			s_main
 	int					*array;
 	int					len_array;
 	int					size;
-	int					count;
 	int					top;
 	int					middle;
 	int					bottom;

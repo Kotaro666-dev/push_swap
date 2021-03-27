@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:21 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/21 13:26:16 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/27 14:34:33 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,4 @@ void	swap_a(t_main *main)
 	temp_value = (*stack_a)->value;
 	(*stack_a)->value = (*stack_a)->next->value;
 	(*stack_a)->next->value = temp_value;
-	main->count++;
 }

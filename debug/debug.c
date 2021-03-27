@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 14:44:50 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/26 16:29:40 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/27 14:33:42 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,4 @@ void	print_out_stack(t_stack *stack_a, t_stack *stack_b)
 	}
 	printf("_  _\n");
 	printf("a  b\n");
-}
-
-void	print_out_count(t_main *main)
-{
-	printf("count = %d\n", main->count);
 }
