@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 16:54:19 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/27 13:49:49 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/27 14:09:02 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,7 @@ void			sort_stack_with_small_numbers(t_main *main)
 	int target;
 	int position;
 
-	push_max_number_to_stack_b(main);
-	if (get_stack_size(main->stack_a) > 3)
-	{
-		push_min_number_to_stack_b(main);
-	}
+	push_max_and_min_number_to_stack_b(main);
 	make_stack_a_with_three_numbers(main);
 	sort_stack_with_three_numbers(main);
 	while (!is_stack_empty(main->stack_b))

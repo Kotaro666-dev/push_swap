@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:00:14 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/27 13:50:36 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/27 13:59:50 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ int			is_target_in_right_position(t_main *main, int target);
 ** PUSH_MAX_AND_MIN_NUMBER_TO_STACK_B.C
 */
 
-void		push_max_number_to_stack_b(t_main *main);
-void		push_min_number_to_stack_b(t_main *main);
+void		push_max_and_min_number_to_stack_b(t_main *main);
 
 #endif
