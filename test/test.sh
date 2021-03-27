@@ -62,7 +62,6 @@ if [ $# -eq 0 ] || [ $1 == '3' ]; then
 	run_test 'python3 generate_random_numbers.py 3'
 	done
 	AVERAGE_THREE=$(( $TOTAL/$TIMES ))
-	printf "$CYAN%s$RESET%s\n" "[NUMBER OF COMMANDS ON AVERAGE]" ": $AVERAGE_THREE"
 fi
 
 if [ $# -eq 0 ] || [ $1 == '5' ]; then
@@ -75,8 +74,6 @@ if [ $# -eq 0 ] || [ $1 == '5' ]; then
 	run_test_for_5_numbers 'python3 generate_random_numbers.py 5'
 	done
 	AVERAGE_FIVE=$(( $TOTAL/$TIMES ))
-	printf "\n$CYAN%s$RESET%s" "[NUMBER OF COMMANDS ON AVERAGE]" ": $AVERAGE_FIVE"
-	printf "\n$RED%s$RESET%s\n" "[OCCURENECE OF MORE THAN 12 COMMANDS]" ": $MORE_THAN_12"
 fi
 
 if [ $# -eq 0 ] || [ $1 == '100' ]; then
@@ -88,7 +85,6 @@ if [ $# -eq 0 ] || [ $1 == '100' ]; then
 	run_test 'python3 generate_random_numbers.py 100'
 	done
 	AVERAGE_HUNDRED=$(( $TOTAL/$TIMES ))
-	printf "\n$CYAN%s$RESET%s\n" "[NUMBER OF COMMANDS ON AVERAGE]" ": $AVERAGE_HUNDRED"
 fi
 
 if [ $# -eq 0 ] || [ $1 == '500' ]; then
@@ -100,5 +96,18 @@ if [ $# -eq 0 ] || [ $1 == '500' ]; then
 	run_test 'python3 generate_random_numbers.py 500'
 	done
 	AVERAGE_FIVE_HUNDRED=$(( $TOTAL/$TIMES ))
-	printf "\n$CYAN%s$RESET%s\n" "[NUMBER OF COMMANDS ON AVERAGE]" ": $AVERAGE_FIVE_HUNDRED"
+fi
+
+if [ $# -eq 0 ] || [ $1 == '3' ]; then
+	printf "$CYAN%s$RESET%s\n" "[NUMBER OF COMMANDS ON AVERAGE]" ": $AVERAGE_THREE"
+fi
+if [ $# -eq 0 ] || [ $1 == '5' ]; then
+	printf "$CYAN%s$RESET%s\n" "[NUMBER OF COMMANDS ON AVERAGE]" ": $AVERAGE_FIVE"
+	printf "\n$RED%s$RESET%s\n" "[OCCURENECE OF MORE THAN 12 COMMANDS]" ": $MORE_THAN_12"
+fi
+if [ $# -eq 0 ] || [ $1 == '100' ]; then
+	printf "$CYAN%s$RESET%s\n" "[NUMBER OF COMMANDS ON AVERAGE]" ": $AVERAGE_HUNDRED"
+fi
+if [ $# -eq 0 ] || [ $1 == '500' ]; then
+	printf "$CYAN%s$RESET%s\n" "[NUMBER OF COMMANDS ON AVERAGE]" ": $AVERAGE_FIVE_HUNDRED"
 fi
