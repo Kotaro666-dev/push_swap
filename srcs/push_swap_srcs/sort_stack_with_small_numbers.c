@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/19 16:54:19 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/23 13:31:44 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/27 13:40:48 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ void			push_max_and_min_number_to_stack_b(t_main *main)
 	{
 		rotate_stack_and_push_b(main, steps_from_tail, FROM_TAIL);
 	}
+	if (get_stack_size(main->stack_a) < 4)
+		return ;
 	steps_from_head = count_step_from_head_to_target(main, main->minimum);
 	steps_from_tail = count_step_from_tail_to_target(main, main->minimum);
 	if (steps_from_head < steps_from_tail)
