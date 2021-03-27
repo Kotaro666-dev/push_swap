@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:43:59 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/23 20:06:17 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/27 13:30:37 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,9 @@ int			print_out_error(t_main *main)
 	return (ERROR);
 }
 
-int			print_out_null_character(void)
+int			print_out_null_character(t_main *main)
 {
+	dispose_memory(main);
 	ft_putstr_fd("\0", STDOUT_FILENO);
 	return (SUCCESS);
 }
