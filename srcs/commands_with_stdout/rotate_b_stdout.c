@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:36 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/27 14:34:50 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/27 14:41:05 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,6 @@
 
 void	rotate_b_stdout(t_main *main)
 {
-	t_stack **stack_b;
-
-	stack_b = &(main->stack_b);
-	if (*stack_b == NULL)
-	{
-		return ;
-	}
-	*stack_b = (*stack_b)->next;
+	rotate_b(main);
 	ft_putendl_fd("rb", STDOUT_FILENO);
 }

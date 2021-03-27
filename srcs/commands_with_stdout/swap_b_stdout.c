@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:18:44 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/27 14:34:56 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/27 14:41:47 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,6 @@
 
 void	swap_b_stdout(t_main *main)
 {
-	int		temp_value;
-	t_stack	**stack_b;
-
-	stack_b = &(main->stack_b);
-	if (*stack_b == NULL || (*stack_b)->next == NULL)
-	{
-		return ;
-	}
-	temp_value = (*stack_b)->value;
-	(*stack_b)->value = (*stack_b)->next->value;
-	(*stack_b)->next->value = temp_value;
+	swap_b(main);
 	ft_putendl_fd("sb", STDOUT_FILENO);
 }
