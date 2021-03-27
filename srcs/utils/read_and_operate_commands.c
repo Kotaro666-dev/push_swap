@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/14 07:43:33 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/21 14:25:06 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/27 13:23:11 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int		read_and_operate_commands(t_main *main)
 {
 	int		return_value;
 	char	*line;
-	char	*formatted_line;
 
 	while (TRUE)
 	{
@@ -57,15 +56,10 @@ int		read_and_operate_commands(t_main *main)
 		}
 		else if (return_value == GNL_ERROR)
 			return (ERROR);
-		formatted_line = ft_strtrim(line, " ");
-		if (!formatted_line)
-			return (ERROR);
-		if (operate_commands(formatted_line, main) == ERROR)
+		if (operate_commands(line, main) == ERROR)
 			return (ERROR);
 		free(line);
-		free(formatted_line);
 	}
 	line = NULL;
-	formatted_line = NULL;
 	return (SUCCESS);
 }
