@@ -53,7 +53,7 @@ function run_test_for_5_numbers()
 	TOTAL=$(( $TOTAL+$COUNT ))
 }
 
-if [ $1 == '3' ]; then
+if [ $# -eq 0 ] || [ $1 == '3' ]; then
 	echo "Random Number 3"
 	TOTAL=0
 	TIMES=18
@@ -65,7 +65,7 @@ if [ $1 == '3' ]; then
 	printf "$CYAN%s$RESET%s\n" "[NUMBER OF COMMANDS ON AVERAGE]" ": $AVERAGE_THREE"
 fi
 
-if [ $1 == '5' ]; then
+if [ $# -eq 0 ] || [ $1 == '5' ]; then
 	echo "Random Number 5"
 	TOTAL=0
 	TIMES=150
@@ -79,7 +79,7 @@ if [ $1 == '5' ]; then
 	printf "\n$RED%s$RESET%s\n" "[OCCURENECE OF MORE THAN 12 COMMANDS]" ": $MORE_THAN_12"
 fi
 
-if [ $1 == '100' ]; then
+if [ $# -eq 0 ] || [ $1 == '100' ]; then
 	echo "Random Number 100"
 	TOTAL=0
 	TIMES=200
@@ -91,7 +91,7 @@ if [ $1 == '100' ]; then
 	printf "\n$CYAN%s$RESET%s\n" "[NUMBER OF COMMANDS ON AVERAGE]" ": $AVERAGE_HUNDRED"
 fi
 
-if [ $1 == '500' ]; then
+if [ $# -eq 0 ] || [ $1 == '500' ]; then
 	echo "Random Number 500"
 	TOTAL=0
 	TIMES=200
