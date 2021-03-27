@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:44:25 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/27 13:30:49 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/27 15:44:54 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int			is_stack_sorted(t_stack *stack);
 int			is_every_number_unique(t_stack *stack);
 
 /*
-**	READ_AND_OPERATE_COMMANDS.C
+** READ_AND_OPERATE_COMMANDS.C
 */
 
 int			read_and_operate_commands(t_main *main);

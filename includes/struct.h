@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 14:58:17 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/27 14:35:06 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/27 15:29:49 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,17 @@ typedef struct			s_stack
 	struct s_stack		*next;
 }						t_stack;
 
+typedef struct			s_option
+{
+	int					is_c;
+	int					is_v;
+}						t_option;
+
 typedef struct			s_main
 {
 	t_stack				*stack_a;
 	t_stack				*stack_b;
+	t_option			*option;
 	int					*array;
 	int					len_array;
 	int					size;

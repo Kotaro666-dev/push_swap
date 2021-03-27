@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/16 22:28:38 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/27 14:35:53 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/27 15:44:22 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int				initialize_struct(t_main *main, int argc)
 {
 	main->stack_a = NULL;
 	main->stack_b = NULL;
+	main->option->is_c = FALSE;
+	main->option->is_v = FALSE;
 	main->array = (int *)malloc(sizeof(int) * (argc + 10));
 	if (main->array == NULL)
 	{

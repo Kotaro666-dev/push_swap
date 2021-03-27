@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   checker_main_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 08:02:55 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/23 14:05:29 by kkamashi         ###   ########.fr       */
+/*   Created: 2021/03/27 15:20:37 by kkamashi          #+#    #+#             */
+/*   Updated: 2021/03/27 15:44:58 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int		main(int argc, char *argv[])
 {
 	t_main main;
 
+	printf("BONUS");
 	if (argc == 1)
 		return (0);
 	if (initialize_struct(&main, argc) == MALLOC_ERROR)
