@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 14:41:33 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/27 17:11:11 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/30 16:36:58 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@
 # define FROM_HEAD 2
 # define FROM_TAIL 3
 # define CLEAR_SCREEN "\e[1;1H\e[2J"
+# define SLEEP_TIME 0.15 * 1000000
 
 #endif
