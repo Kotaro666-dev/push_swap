@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:26 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/30 12:55:54 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/30 15:48:12 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void			push_a(t_main *main)
 	stack_b = &(main->stack_b);
 	if (*stack_b == NULL)
 	{
+		print_out_stack_and_clear_screen(main);
 		return ;
 	}
 	head_stack_b = *stack_b;

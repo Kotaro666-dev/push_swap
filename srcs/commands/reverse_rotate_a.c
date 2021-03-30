@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:17 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/30 12:56:09 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/30 15:48:23 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	reverse_rotate_a(t_main *main)
 	stack_a = &(main->stack_a);
 	if (*stack_a == NULL)
 	{
+		print_out_stack_and_clear_screen(main);
 		return ;
 	}
 	*stack_a = (*stack_a)->prev;

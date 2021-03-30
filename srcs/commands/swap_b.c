@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:18:44 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/30 12:56:49 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/30 15:48:51 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	swap_b(t_main *main)
 	stack_b = &(main->stack_b);
 	if (*stack_b == NULL || (*stack_b)->next == NULL)
 	{
+		print_out_stack_and_clear_screen(main);
 		return ;
 	}
 	temp_value = (*stack_b)->value;
