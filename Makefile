@@ -6,7 +6,7 @@
 #    By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/11 08:08:33 by kkamashi          #+#    #+#              #
-#    Updated: 2021/03/27 15:48:01 by kkamashi         ###   ########.fr        #
+#    Updated: 2021/03/30 16:35:47 by kkamashi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ PUSH_SWAP = push_swap
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-DEBUG = # -g -fsanitize=address
+DEBUG = -g -fsanitize=address
 DEPENDENCY_OPTION = -MMD -MP -MF
 LIBS_DIR = ./libs
 RM = rm -f
@@ -26,11 +26,11 @@ INCLUDE = -I./includes/ \
 			-I./libs/get_next_line/
 
 SRCS = ${shell find ./srcs/utils -type f -name "*.c"}
-SRCS += ${shell find ./debug -type f -name "*.c"}
 SRCS += ${shell find ./srcs/commands -type f -name "*.c"}
 SRCS += ${shell find ./srcs/commands_with_stdout -type f -name "*.c"}
 SRCS += ${shell find ./libs/get_next_line -type f -name "*.c"}
 SRCS += ${shell find ./srcs/push_swap_srcs -type f -name "*.c"}
+SRCS += ./srcs/bonus/read_and_store_option.c ./srcs/bonus/print_out_stack.c
 SRCS_CHECKER = ./srcs/mandatory/checker_main.c
 SRCS_PUSH_SWAP = ./srcs/mandatory/push_swap_main.c
 SRCS_CHECKER_BONUS = ./srcs/bonus/checker_main_bonus.c
