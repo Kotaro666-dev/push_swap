@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:44:25 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/27 15:44:54 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/30 16:44:14 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 ** PRINT_OUT.C
 */
 
-int			print_out_ok(void);
+int			print_out_ok(t_main *main);
 int			print_out_ko(t_main *main);
 int			print_out_error(t_main *main);
 int			print_out_null_character(t_main *main);

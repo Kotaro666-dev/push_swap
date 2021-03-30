@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 15:20:37 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/30 16:39:56 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/30 16:44:51 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ int		main(int argc, char *argv[])
 	if (!is_stack_empty(main.stack_b))
 		return (print_out_ko(&main));
 	dispose_memory(&main);
-	return (print_out_ok());
+	return (print_out_ok(&main));
 }
