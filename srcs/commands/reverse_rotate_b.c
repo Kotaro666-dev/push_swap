@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:15 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/27 14:34:27 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/30 12:56:12 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,5 @@ void	reverse_rotate_b(t_main *main)
 		return ;
 	}
 	*stack_b = (*stack_b)->prev;
+	print_out_stack_and_clear_screen(main);
 }

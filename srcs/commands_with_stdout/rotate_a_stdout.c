@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:32 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/27 14:40:49 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/30 12:54:22 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@
 void	rotate_a_stdout(t_main *main)
 {
 	rotate_a(main);
+	print_out_stack_and_clear_screen(main);
 	ft_putendl_fd("ra", STDOUT_FILENO);
 }
