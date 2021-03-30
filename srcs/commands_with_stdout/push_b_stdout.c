@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:30 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/30 12:54:06 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/30 16:02:06 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,5 @@
 void	push_b_stdout(t_main *main)
 {
 	push_b(main);
-	print_out_stack_and_clear_screen(main);
 	ft_putendl_fd("pb", STDOUT_FILENO);
 }
