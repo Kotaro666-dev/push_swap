@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 08:00:14 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/30 13:05:03 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/30 16:35:40 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include "libft.h"
 # include "constant.h"
 # include "utils.h"
-# include "debug.h"
 # include "struct.h"
 
 /*
@@ -88,5 +87,7 @@ void		push_max_and_min_number_to_stack_b(t_main *main);
 */
 
 void		read_and_store_option(t_main *main, char **argv);
+void		print_out_stack(t_main *main);
+void		print_out_stack_and_clear_screen(t_main *main);
 
 #endif
