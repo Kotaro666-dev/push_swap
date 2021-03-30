@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/13 21:17:26 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/30 15:48:12 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/30 17:08:26 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,7 @@ void			push_a(t_main *main)
 	else
 		remove_head_node(&(stack_b), head_stack_b);
 	if (*stack_a == NULL)
-	{
 		insert_node_at_front(&(stack_a), head_stack_b);
-	}
 	else
 	{
 		insert_node_at_end(&(stack_a), head_stack_b);

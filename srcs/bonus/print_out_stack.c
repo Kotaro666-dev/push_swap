@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 14:44:50 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/30 16:35:54 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/30 17:08:01 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static void		add_space(int num)
 	}
 }
 
-static void	print_out_stack_a(t_stack **current_a)
+static void		print_out_stack_a(t_stack **current_a)
 {
 	write(STDOUT_FILENO, "|", 1);
 	if (*current_a)
@@ -50,7 +50,7 @@ static void	print_out_stack_a(t_stack **current_a)
 	}
 }
 
-static void	print_out_stack_b(t_stack **current_b)
+static void		print_out_stack_b(t_stack **current_b)
 {
 	if (*current_b)
 	{
@@ -65,7 +65,7 @@ static void	print_out_stack_b(t_stack **current_b)
 	write(STDOUT_FILENO, "|", 1);
 }
 
-void	print_out_stack(t_main *main)
+void			print_out_stack(t_main *main)
 {
 	t_stack *current_a;
 	t_stack *current_b;
@@ -73,9 +73,7 @@ void	print_out_stack(t_main *main)
 	t_stack *head_b;
 
 	if (main->option.is_v == FALSE)
-	{
 		return ;
-	}
 	current_a = main->stack_a;
 	current_b = main->stack_b;
 	head_a = main->stack_a;
@@ -87,19 +85,15 @@ void	print_out_stack(t_main *main)
 		write(STDOUT_FILENO, "|", 1);
 		print_out_stack_b(&current_b);
 		if (current_a == head_a)
-		{
 			current_a = NULL;
-		}
 		if (current_b == head_b)
-		{
 			current_b = NULL;
-		}
 		write(STDOUT_FILENO, "\n", 1);
 	}
 	ft_putendl_fd("----A----|----B----", STDOUT_FILENO);
 }
 
-void	print_out_stack_and_clear_screen(t_main *main)
+void			print_out_stack_and_clear_screen(t_main *main)
 {
 	if (main->option.is_v == FALSE)
 	{
