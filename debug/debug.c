@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 14:44:50 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/27 14:33:42 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/30 13:00:18 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,21 @@ void	print_out_stack_b(t_stack **current_b)
 	}
 }
 
-void	print_out_stack(t_stack *stack_a, t_stack *stack_b)
+void	print_out_stack(t_main *main)
 {
 	t_stack *current_a;
 	t_stack *current_b;
 	t_stack *head_a;
 	t_stack *head_b;
 
-	current_a = stack_a;
-	current_b = stack_b;
-	head_a = stack_a;
-	head_b = stack_b;
-	printf("\e[1;1H\e[2J");
-	usleep(0.15 * 1000000);
+	if (main->option.is_v == FALSE)
+	{
+		return ;
+	}
+	current_a = main->stack_a;
+	current_b = main->stack_b;
+	head_a = main->stack_a;
+	head_b = main->stack_b;
 	printf("_  _\n");
 	while (current_a || current_b)
 	{
@@ -68,4 +70,15 @@ void	print_out_stack(t_stack *stack_a, t_stack *stack_b)
 	}
 	printf("_  _\n");
 	printf("a  b\n");
+}
+
+void	print_out_stack_and_clear_screen(t_main *main)
+{
+	if (main->option.is_v == FALSE)
+	{
+		return ;
+	}
+	print_out_stack(main);
+	usleep(0.15 * 1000000);
+	printf(CLEAR_SCREEN);
 }
