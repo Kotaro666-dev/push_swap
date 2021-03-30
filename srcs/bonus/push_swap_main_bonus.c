@@ -6,7 +6,7 @@
 /*   By: kkamashi <kkamashi@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/27 15:20:34 by kkamashi          #+#    #+#             */
-/*   Updated: 2021/03/27 15:43:49 by kkamashi         ###   ########.fr       */
+/*   Updated: 2021/03/30 16:26:51 by kkamashi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ int				main(int argc, char *argv[])
 {
 	t_main main;
 
-	printf("BONUS");
 	if (argc == 1)
 	{
 		return (0);
