@@ -1,11 +1,11 @@
-#　How to test
+# How to test
 
 ```
 bash
 ARG=`python test/generate_random_numbers.py 100`; ./push_swap $ARG
 ```
 
-# How to count step
+# How to count the number of commands 
 
 ```
 bash
@@ -19,9 +19,8 @@ bash
 ARG=`python test/generate_random_numbers.py 100`; ./push_swap $ARG | ./checker $ARG
 ```
 
-# start test.sh
+# Start test.sh
 
 ```
-cd test
-sh test.sh
+cd test; sh test.sh
 ```
